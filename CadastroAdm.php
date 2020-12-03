@@ -5,15 +5,15 @@ class Administrador{
     private     $senha;
     private     $codigo;
 
-	function Administrador(){
+  function __construct (){
 		$this->cadastroAdministrador();
 	}
 
 	private function cadastroAdministrador(){
-        $this->nome = "Octavio";
-        $this->login = "@admim";
-        $this->senha = "123456";
-        $this->codigo = "069";
+        $this->nome =  $_POST['nomeAdmin'];
+        $this->login = $_POST['loginAdmin'];
+        $this->senha =  $_POST['senhaAdmin'];
+        $this->codigo =  $_POST['codAdmin'];
 		
 	}
 
