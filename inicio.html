@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>PACIENTES</title>
+    </head>
+    <body>
+        <div>Formulário Pacientes</div>
+        <form id="cadastroPacientes" action="Listagem.php" method="post">
+            CPF: <input type="text" name="cpfPac"><br>
+            NOME: <input type="text" name="nomePac"><br>
+            DATA DE NASCIMENTO: <input type="date" name="data_nasc"><br>
+            GENERO:
+            <select name="generoPac">
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+                <option value="nulo">Prefiro não dizer</option>
+            </select><br>
+            ACOMPANHANTE: <input type="text" name="acompanhantePac"><br>
+            ENDEREÇO: <input type="text" name="endPac"><br>
+            SINTOMAS: <input type="text" name="sintomasPac"><br>
+            GRAVIDADE:
+            <select name="gravidadePac">
+                <option value="baixa">Baixa</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+                <option value="muitoAlta">Muito Alta</option>
+            </select><br>
+            DATA SINTOMAS: <input type="date" name="dataSintomas"><br>
+            <input type="submit"/>
+        </form>
+    </body>
+</html>

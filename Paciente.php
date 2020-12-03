@@ -1,13 +1,6 @@
-<html>
-    <head>
-    
-    </head>
-    <body>
-    </body>
-</html>
 <?php
 class Paciente{
-    protected $cpf;
+    protected   $cpf;
     public      $nome;
     public      $data_nasc;
     public      $genero;
@@ -17,20 +10,20 @@ class Paciente{
     private     $gravidade;
     private     $data_sintomas;
 
-	function Paciente(){
+  function __construct (){
 		$this->cadastroPaciente();
 	}
 
 	private function cadastroPaciente(){
-        $this->cpf = "99999999999";
-        $this->nome = "Octavio";
-        $this->data_nasc = "01012000";
-        $this->genero = "Masculino";
-        $this->acompanhante = "Maria";
-        $this->endereco = "Rua Fulano de Tal número 0 apt 999";
-        $this->sintomas = "Febre";
-        $this->gravidade = "Leve";
-		$this->data_sintomas = "01012020";
+        $this->cpf = $_POST['cpfPac'];
+        $this->nome = $_POST['nomePac'];
+        $this->data_nasc = $_POST['data_nasc'];
+        $this->genero = $_POST['generoPac'];
+        $this->acompanhante = $_POST['acompanhantePac'];
+        $this->endereco = $_POST['endPac'];
+        $this->sintomas = $_POST['sintomasPac'];
+        $this->gravidade = $_POST['gravidadePac'];
+		    $this->data_sintomas = $_POST['dataSintomas'];
 		
 	}
 
