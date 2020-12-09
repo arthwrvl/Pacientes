@@ -11,17 +11,20 @@
 <body>
     <nav>
         <ul class="nav-list">
+            <img src="./Resources/remedio.svg" alt="home">
+            <div class="form">
             <form method="POST" action="./PHP/CadastroAdm.php">
-                <input id="log" type="text" autocomplete="off" name="login">
                 <label for="login" class="label-login">
-                    <span class="content-name">Name</span>
+                    <span class="content-name">Login</span>
                 </label>
-                <input id="psw" type="text" name="password">
-                <label for="password" class="label-password">
+                <input id="log" type="text" autocomplete="off" name="login">
+                <label for="psw" class="label-psw">
                     <span class="content-name">Senha</span>
                 </label>
-                <button type="submit">Login</button>
+                <input id="psw" type="text" autocomplete="off" name="psw">
+                <button class="botao" type="submit">Login</button>
               </form>
+              </div>
         </ul>
     </nav>
 
