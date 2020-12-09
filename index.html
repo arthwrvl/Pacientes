@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/style.css"/>
+    <title>Vc consultaria agui</title>
+</head>
+<body>
+    <nav>
+        <ul class="nav-list">
+            <form method="POST" action="./PHP/CadastroAdm.php">
+                <input id="log" type="text" autocomplete="off" name="login">
+                <label for="login" class="label-login">
+                    <span class="content-name">Name</span>
+                </label>
+                <input id="psw" type="text" name="password">
+                <label for="password" class="label-password">
+                    <span class="content-name">Senha</span>
+                </label>
+                <button type="submit">Login</button>
+              </form>
+        </ul>
+    </nav>
+
+        <main data-router-wrapper>
+        <section data-router-view="home" class="home">
+            <div class="home-content">
+                <div class="home-presentation">
+                    <h1>Você consultaria agui?</h1>
+                    <p>cadastre os pacientes agui</p>
+                </div>
+                <img src="./Resources/doctor.svg" alt="home">
+            </div>
+        </section>
+    </main>
+</body>
+</html>
