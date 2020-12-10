@@ -14,18 +14,18 @@
     $result = mysqli_query($link, $sql);
     ?>
         <table>
-    <?php
-    while($row = mysqli_fetch_array($result)){
-    ?>
-            <tr>
-                <td><?php echo $row['nome'];?></td>
-                <td><?php echo $row['login'];?></td>
-                <td><?php echo $row['senha'];?></td>
-                <td><?php echo $row['codigo'];?></td>
-            </tr>
-        <?php
-    }
-    ?>
+            <?php
+            while($row = mysqli_fetch_array($result)){
+            ?>
+                    <tr>
+                        <td><?php echo $row['nome'];?></td>
+                        <td><?php echo $row['login'];?></td>
+                        <td><?php echo $row['senha'];?></td>
+                        <td><?php echo $row['codigo'];?></td>
+                    </tr>
+                <?php
+            }
+            ?>
         </table>
     </body>
 </html>

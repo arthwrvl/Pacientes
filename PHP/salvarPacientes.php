@@ -49,6 +49,6 @@
     }
 ?>
 <div>
-    <a href="codigo.php">Mostrar dados</a>
+    <a href="imprimirPac.php">Mostrar dados</a>
 </div>
 

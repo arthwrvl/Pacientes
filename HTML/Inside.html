@@ -28,17 +28,23 @@
                   <th>Endereço</th>
                   <th>Data Sintomas</th>
                 </tr>
-                <?php
-                    $conn = mysqli_connect("localhost", "root", "", "SUS");
-                    if($conn-> connect_error){
-                        die("Coonection failed:". $conn -> connect_error);
-                    }
-
-                    $sql = "SELECT nome, genero, gravidade, sintomas, acompanhante, endereco, data_sintomas FROM PACIENTES";
-                    $conn-> query($sql);
+                <a href="../PHP/imprimirPac.php"><button>Listar</button></a>
+                <br>
+                <!--   <?php
+                    $user = "root";
+                    $password = "";
+                    $database = "SUS";
+                    $hostname = "localhost";
+                    
+                    $link = mysqli_connect($hostname, $user, $password, $database) or die("Erro "
+                            . "conexão");
+                    
+                    $sql = "SELECT * FROM Pacientes";
+                    
+                    $result = mysqli_query($link, $sql);
                     if($result-> num_rows > 0){
                         while($row = $result-> fetch_assoc()){
-                            echo "<tr><td>". $row["nome"] ."</td><td>". $row["genero"] ."</td><td>". $row["Situação"] ."</td><td>". $row["sintomas"] ."</td><td>" . $row["acompanhante"] ."</td><td>". $row["endereco"] ."</td><td>". $row["data_sintomas"] ."</td></tr>";
+                            echo "<tr><td>". $row["nome"] ."</td><td>". $row["genero"]  ."</td><td>". $row["sintomas"] ."</td><td>" . $row["acompanhante"] ."</td><td>". $row["endereco"] ."</td><td>". $row["data_sintomas"] ."</td></tr>";
                         }
                         echo "</table>"
                     }
@@ -47,7 +53,8 @@
                     }
                     $conn-> close();
                 ?>
-                <a href="inicio.html"><button>Adicionar Paciente</button></a>
+                -->
+                <a href="../HTML/inicio.html"><button>Adicionar Paciente</button></a>
         </section>
     </main>
 </body>
