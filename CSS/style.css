@@ -7,6 +7,7 @@
 }
 
 .nav-list {
+  background-color: #dfe6e9;
   height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -34,6 +35,7 @@
 }
 
 .form input {
+  background-color: #dfe6e9;
   border: none;
   border-bottom: 1px solid #2d3436;
 }
