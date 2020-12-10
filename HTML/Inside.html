@@ -5,10 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./CSS/style.css"/>
+    <link rel="stylesheet" href="../CSS/style.css"/>
     <title>Vc consultaria agui</title>
 </head>
 <body>
-    
+    <nav>
+        <ul class="nav-list">
+            <img src="../Resources/remedio.svg" alt="home">
+            <li><a class="nav-links">vc ta consultando agui</a></li>
+
+        </ul>
+    </nav>
+    <main data-router-wrapper>
+        <section data-router-view="home" class="home">
+            <table>
+                <tr>
+                  <th>Nome</th>
+                  <th>Genero</th>
+                  <th>Situação</th> 
+                  <th>Sintomas</th>
+                  <th>Acompanhante</th>
+                  <th>Endereço</th>
+                  <th>Data Sintomas</th>
+                </tr>
+                <tr>
+                  <td>Jill</td>
+                  <td>Smith</td>
+                  <td>50</td>
+                </tr>
+              <button>Adicionar Paciente</button>
+        </section>
+    </main>
 </body>
 </html>
