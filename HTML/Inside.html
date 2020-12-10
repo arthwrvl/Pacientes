@@ -28,11 +28,25 @@
                   <th>Endereço</th>
                   <th>Data Sintomas</th>
                 </tr>
-                <tr>
-                  <td>Jerry</td>
-                  <td>Smith</td>
-                  <td>50</td>
-                </tr>
+                <?php
+                    $conn = mysqli_connect("localhost", "root", "", "SUS");
+                    if($conn-> connect_error){
+                        die("Coonection failed:". $conn -> connect_error);
+                    }
+
+                    $sql = "SELECT nome, genero, gravidade, sintomas, acompanhante, endereco, data_sintomas FROM PACIENTES";
+                    $conn-> query($sql);
+                    if($result-> num_rows > 0){
+                        while($row = $result-> fetch_assoc()){
+                            echo "<tr><td>". $row["nome"] ."</td><td>". $row["genero"] ."</td><td>". $row["Situação"] ."</td><td>". $row["sintomas"] ."</td><td>" . $row["acompanhante"] ."</td><td>". $row["endereco"] ."</td><td>". $row["data_sintomas"] ."</td></tr>";
+                        }
+                        echo "</table>"
+                    }
+                    else{
+                        echo "0 result";
+                    }
+                    $conn-> close();
+                ?>
                 <a href="inicio.html"><button>Adicionar Paciente</button></a>
         </section>
     </main>

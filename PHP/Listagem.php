@@ -2,25 +2,17 @@
     require_once 'Paciente.php';
 
     function imprimePaciente(){
-        $paciente = new Paciente;
-        echo $paciente->getCpf();
-        echo "<br>";
-        echo $paciente->getNome();
-        echo "<br>";
-        echo $paciente->getData_nasc();
-        echo "<br>";
-        echo $paciente->getGenero();
-        echo "<br>";
-        echo $paciente->getAcompanhante();
-        echo "<br>";
-        echo $paciente->getEndereco(); 
-        echo "<br>";
-        echo $paciente->getSintomas();
-        echo "<br>";
-        echo $paciente->getGravidade();
-        echo "<br>";
-        echo $paciente->getData_sintomas();
-        echo "<br>";
+        while($row = mysqli_fetch_array($result))
+        {
+        echo "<tr>";
+        echo "<td>" . $row['FirstName'] . "</td>";
+        echo "<td>" . $row['LastName'] . "</td>";
+        echo "</tr>";
+        }
+        echo "</table>";
+        
+        mysqli_close($con);
+        ?>
     }
     imprimePaciente();
 ?>
