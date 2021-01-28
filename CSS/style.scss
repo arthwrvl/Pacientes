@@ -6,7 +6,11 @@
 }
 
 .wrap{
+<<<<<<< HEAD
     z-index: -2;
+=======
+
+>>>>>>> f5d5f444dc97065c2e8b3c04dda6431f6c9bfa1a
     background-image: linear-gradient(to top, #0175c2 0%,#1abc9c 100%);
     background-position: center;
     background-size: cover;
@@ -21,7 +25,10 @@
     overflow: hidden;
 }
 header{
+<<<<<<< HEAD
     z-index: 2;
+=======
+>>>>>>> f5d5f444dc97065c2e8b3c04dda6431f6c9bfa1a
     position: fixed;
     top: 0px;
     left: 0px;
@@ -72,6 +79,7 @@ header{
 
 }
 .content{
+<<<<<<< HEAD
     height: 100%;
     z-index: 0;
     position: relative;
@@ -82,12 +90,22 @@ header{
     color: #ecf0f1;
     h1{
         padding: 220px 120px 0;
+=======
+    position: relative;
+    max-width: 60%;
+    padding: 220px 120px 0;
+    color: #ecf0f1;
+    h1{
+>>>>>>> f5d5f444dc97065c2e8b3c04dda6431f6c9bfa1a
         font-size: 44px;
         text-shadow: 2px 2px 4px rgba($color: #000000, $alpha: 0.5);
         font-weight: 900;
     }
     p{
+<<<<<<< HEAD
         padding: 220px 120px 0;
+=======
+>>>>>>> f5d5f444dc97065c2e8b3c04dda6431f6c9bfa1a
         padding-top: 20px;
         padding-right: 100px;
         text-justify: newspaper;
@@ -96,6 +114,7 @@ header{
         text-shadow: 1px 1px 2px rgba($color: #000000, $alpha: 0.5);
     }
 }
+<<<<<<< HEAD
 .example{
     padding: 170px 120px 0;
     width: 70%; 
@@ -105,6 +124,8 @@ header{
         width: 90%;
     }
 }
+=======
+>>>>>>> f5d5f444dc97065c2e8b3c04dda6431f6c9bfa1a
 table {
     width:100%;
   }
@@ -153,6 +174,14 @@ table {
         color: #2d3436;
     }
 }
+<<<<<<< HEAD
+=======
+.home{
+    height: 90vh;
+    position: absolute;
+    width: 100%;
+}
+>>>>>>> f5d5f444dc97065c2e8b3c04dda6431f6c9bfa1a
 .home-content{
     height: 100%;
     display: flex;
