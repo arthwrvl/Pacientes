@@ -383,7 +383,7 @@ iframe {
 }
 
 header {
-  z-index: 2;
+  z-index: 4;
   position: fixed;
   top: 0px;
   left: 0px;
