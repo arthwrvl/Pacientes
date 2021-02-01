@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1920 970.1" style="enable-background:new 0 0 1920 970.1;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#ECF0F1;}
+	.st0{fill:url(#SVGID_1_);}
 </style>
 <title>wave</title>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="534.2" x2="1920" y2="534.2">
+	<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0.5"/>
+	<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.9"/>
+</linearGradient>
 <path class="st0" d="M1920,98.3c-247,158.8-455.4,254.5-671.4,362.6c-216,108-475.7,264.6-851.1,259.7C199.4,718,32.3,563.7,0,443.9
 	v526.2h1920V98.3z"/>
 </svg>

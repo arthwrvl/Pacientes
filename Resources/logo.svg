@@ -1,1 +1,13 @@
-<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 434 434"><defs><style>.cls-1{fill:#ecf0f1;}</style></defs><title>logo</title><path class="cls-1" d="M878,323c-119.85,0-217,97.15-217,217s97.15,217,217,217,217-97.15,217-217S997.85,323,878,323ZM856.76,634.62A55.18,55.18,0,0,1,779,632.14h0a55.18,55.18,0,0,1,2.48-77.77l53.61-50.28,77.85,77.85Zm117-109.78-49.5,46.44-77.85-77.85,52.06-48.84a55.18,55.18,0,0,1,77.77,2.48h0A55.18,55.18,0,0,1,973.78,524.84Z" transform="translate(-661 -323)"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 434 434" style="enable-background:new 0 0 434 434;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#ECF0F1;}
+</style>
+<title>logo</title>
+<path class="st0" d="M217,0C97.2,0,0,97.1,0,217s97.2,217,217,217s217-97.2,217-217S336.8,0,217,0z M195.8,311.6
+	c-22.2,20.7-56.9,19.6-77.8-2.5l0,0c-20.7-22.2-19.6-56.9,2.5-77.8l53.6-50.3l77.8,77.9L195.8,311.6z M312.8,201.8l-49.5,46.4
+	l-77.8-77.9l52.1-48.8c22.2-20.7,56.9-19.6,77.8,2.5l0,0C335.9,146.3,334.8,181,312.8,201.8L312.8,201.8z"/>
+<rect x="142.8" y="203.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 216.06 -92.1537)" class="st0" width="153" height="22.6"/>
+</svg>
