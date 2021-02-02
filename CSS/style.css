@@ -629,7 +629,7 @@ main {
 
 .circle2 {
   bottom: 2%;
-  left: 5%;
+  left: 30%;
 }
 
 .circle3 {
@@ -676,12 +676,12 @@ a.fill:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 1.5rem 0rem;
-  padding: 0.7rem 2.5rem;
+  margin: 1rem 0rem;
+  padding: 0.7rem 1.3rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 1.4rem;
+  border-radius: 1rem;
 }
 
 .option img {
@@ -732,6 +732,100 @@ a.fill:hover {
       -ms-flex: 2;
           flex: 2;
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.CadPac h2 {
+  color: #132741;
+  opacity: 0.8;
+  font-size: 24px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.CadPac .formul {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.CadPac .formul h5 {
+  margin-left: 22.5rem;
+  margin-bottom: 0.3rem;
+  color: #132741;
+}
+
+.CadPac .formul h4 {
+  margin-left: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: #132741;
+  font-size: 14px;
+}
+
+.CadPac .formul label {
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+}
+
+.CadPac .formul input {
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+  border: none;
+  width: 17rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 3rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  color: #132741;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.CadPac .formul input:focus {
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(216, 243, 239, 0.644)), to(rgba(204, 238, 243, 0.3)));
+  background: linear-gradient(to right bottom, rgba(216, 243, 239, 0.644), rgba(204, 238, 243, 0.3));
+}
+
+.CadPac .formul input[type="date"]::-webkit-calendar-picker-indicator {
+  -webkit-filter: invert(12%) sepia(9%) saturate(6483%) hue-rotate(182deg) brightness(95%) contrast(93%);
+          filter: invert(12%) sepia(9%) saturate(6483%) hue-rotate(182deg) brightness(95%) contrast(93%);
+}
+
+.CadPac .formul textarea {
+  resize: none;
+  width: 90%;
+  height: 18%;
+  padding: 1rem;
+  margin-left: 1rem;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+  border-radius: 1rem;
+}
+
+.CadPac .formul textarea:focus {
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(216, 243, 239, 0.644)), to(rgba(204, 238, 243, 0.3)));
+  background: linear-gradient(to right bottom, rgba(216, 243, 239, 0.644), rgba(204, 238, 243, 0.3));
+}
+
+.CadPac .formul button {
+  float: right;
+  border-radius: 1rem;
+  margin-right: 3.5rem;
+  margin-top: 0.4rem;
+  padding: 0.7rem;
+  width: 10rem;
+  font-size: 16px;
+  color: #ecf0f1;
+  background: -webkit-gradient(linear, left bottom, right top, from(#0071bc93), to(#65c9d094));
+  background: linear-gradient(to right top, #0071bc93, #65c9d094);
 }
 
 .EditPac {

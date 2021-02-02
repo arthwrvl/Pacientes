@@ -22,34 +22,34 @@
                 </div>
                 <div class="options">
                     <a href="#" class="fill">
-                        <div class="option" onclick="Option1();">
+                        <div class="option" onclick="Option1();" id="btn1">
                             <img src="../Resources/addpaci.svg" />
                             <h2>Cadastrar Paciente</h2>
 
                         </div>
                     </a>
                     <a href="#" class="fill">
-                        <div class="option" onclick="Option2();">
+                        <div class="option" onclick="Option2();" id="btn2">
                             <img src="../Resources/confpaci.svg" />
-                            <h2>Editar Pacientes</h2>
+                            <h2>Editar Paciente</h2>
                         </div>
                     </a>
                     <a href="#" class="fill">
-                        <div class="option" onclick="Option3();">
+                        <div class="option" onclick="Option3();" id="btn3">
                             <img src="../Resources/list.svg" />
                             <h2>Listar Pacientes</h2>
                         </div>
                     </a>
                     <a href="#" class="fill">
-                        <div class="option" onclick="Option4();">
+                        <div class="option" onclick="Option4();" id="btn4">
                             <img src="../Resources/addfunc.svg" />
-                            <h2>Adicionar Funcionários</h2>
+                            <h2>Cadastrar Funcionário</h2>
                         </div>
                     </a>
                     <a href="#" class="fill">
-                        <div class="option" onclick="Option5();">
+                        <div class="option" onclick="Option5();" id="btn5">
                             <img src="../Resources/conffunc.svg" />
-                            <h2>Editar Funcionários</h2>
+                            <h2>Editar Funcionário</h2>
                         </div>
                     </a>
 
@@ -62,6 +62,34 @@
             </div>
             <div class="CadPac" id="op1">
                 <h2>Cadastrar Paciente</h2>
+                <div class="formul">
+                    <form method="POST">
+                        <div class="name">
+                            <input type="text" name="name" id="namepac" placeholder="Nome"/>
+                            <input type="text" name="surname" id="surpac" placeholder="Sobrenome"/>
+                        </div>
+                        <h5>Data de nascimento</h5>
+                        <div class="cpfdt">
+                            <input type="text" name="cpf" id="cpfpac" placeholder="CPF"/>
+                            <input type="date" name="dtnasc" id="dtnascpac" placeholder="Data de nascimento"/>
+                        </div>
+                        <h4>Endereço</h4>
+                        <div class="end">
+                            <input type="text" name="rua" id="ruapac" placeholder="Rua"/>
+                            <input type="text" name="bairro" id="bairropac" placeholder="Bairro"/>
+                            <input type="text" name="num" id="numpac" placeholder="Numero"/>
+                            <input type="text" name="comp" id="compac" placeholder="Complemento"/>
+                        </div>
+                        <h4>Diagnóstico</h4>
+                        <div class="diag">
+                            <input type="text" name="gravid" id="gravpac" placeholder="Gravidade"/>
+                            <input type="text" name="acom" id="acompac" placeholder="Acompanhante"/>
+                            <input type="date" name="dtinic" id="dtinicsint" placeholder="Data inicial dos sintomas"/>
+                        </div>
+                        <textarea id="sint" name="sintomas" placeholder="Sintomas separados por ponto e vírgula"></textarea>
+                        <button type="submit">Cadastrar</button>
+                    </form>
+                </div>
             </div>
             <div class="EditPac" id="op2">
                 <h2>Editar Paciente</h2>
