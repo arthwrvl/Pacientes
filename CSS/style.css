@@ -19,7 +19,7 @@
 /*---------------------------------------------*/
 .text-center {
   text-align: center !important;
-  padding-top: 100px;
+  padding-top: 5rem;
 }
 
 a {
@@ -108,35 +108,35 @@ textarea:focus:-ms-input-placeholder {
 }
 
 input::-webkit-input-placeholder {
-  color: #adadad;
+  color: #1327419a;
 }
 
 input:-moz-placeholder {
-  color: #adadad;
+  color: #1327419a;
 }
 
 input::-moz-placeholder {
-  color: #adadad;
+  color: #1327419a;
 }
 
 input:-ms-input-placeholder {
-  color: #adadad;
+  color: #1327419a;
 }
 
 textarea::-webkit-input-placeholder {
-  color: #adadad;
+  color: #1327419a;
 }
 
 textarea:-moz-placeholder {
-  color: #adadad;
+  color: #1327419a;
 }
 
 textarea::-moz-placeholder {
-  color: #adadad;
+  color: #1327419a;
 }
 
 textarea:-ms-input-placeholder {
-  color: #adadad;
+  color: #1327419a;
 }
 
 /*---------------------------------------------*/
@@ -158,13 +158,13 @@ iframe {
 [ Utility ]*/
 .txt1 {
   font-size: 12px;
-  color: #8d8d8d;
+  color: #132741b0;
 }
 
 .txt2 {
   font-weight: 700;
   font-size: 14px;
-  color: #0175c2;
+  color: #0077ff;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -189,16 +189,19 @@ iframe {
       -ms-flex-align: center;
           align-items: center;
   padding: 15px;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#0175c2), to(#1abc9c));
-  background-image: linear-gradient(to top, #0175c2 0%, #1abc9c 100%);
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#019aff), to(#1fdeb8));
+  background-image: linear-gradient(to left top, #019aff, #1fdeb8);
 }
 
 .wrap-login100 {
   width: 390px;
-  background: #fff;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
   border-radius: 10px;
   overflow: hidden;
   padding: 77px 55px 33px 55px;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
   -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
 }
@@ -214,7 +217,7 @@ iframe {
   font-weight: 900;
   display: block;
   font-size: 30px;
-  color: #2d3436;
+  color: #1327419a;
   line-height: 1.2;
   text-align: center;
 }
@@ -228,8 +231,77 @@ iframe {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 2px solid #adadad;
+  border-bottom: 2px solid #132741b0;
   margin-bottom: 37px;
+}
+
+.wrap-input50 {
+  width: 20%;
+  position: absolute;
+  border-bottom: 2px solid #132741b0;
+}
+
+.nm {
+  left: 35%;
+}
+
+.sr {
+  left: 65%;
+}
+
+.cpf {
+  left: 35%;
+  top: 23%;
+}
+
+.dt {
+  left: 65%;
+  top: 23%;
+}
+
+.ru {
+  left: 35%;
+  top: 33%;
+}
+
+.br {
+  left: 65%;
+  top: 33%;
+}
+
+.nu {
+  left: 35%;
+  top: 43%;
+}
+
+.cm {
+  left: 65%;
+  top: 43%;
+}
+
+.ct {
+  left: 35%;
+  top: 53%;
+}
+
+.es {
+  left: 65%;
+  top: 53%;
+}
+
+.gv {
+  left: 35%;
+  top: 63%;
+}
+
+.ac {
+  left: 65%;
+  top: 63%;
+}
+
+.dti {
+  left: 35%;
+  top: 73%;
 }
 
 .input100 {
@@ -239,6 +311,16 @@ iframe {
   display: block;
   width: 100%;
   height: 45px;
+  background: transparent;
+  padding: 0 5px;
+}
+
+.input50 {
+  font-size: 15px;
+  color: #2d3436;
+  line-height: 1.2;
+  width: 20%;
+  height: 3rem;
   background: transparent;
   padding: 0 5px;
 }
@@ -254,6 +336,43 @@ iframe {
   pointer-events: none;
 }
 
+.focus-input50 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.focus-input50::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  background: #0175c2;
+  background: -webkit-gradient(linear, left top, right top, from(#0199ff), to(#1fdeb8be));
+  background: linear-gradient(left, #0199ff, #1fdeb8be);
+}
+
+.focus-input50::after {
+  font-size: 15px;
+  color: #132741b0;
+  line-height: 1.2;
+  content: attr(data-placeholder);
+  width: 100%;
+  position: absolute;
+  top: 16px;
+  left: 0px;
+  padding-left: 5px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
 .focus-input100::before {
   content: "";
   display: block;
@@ -265,13 +384,13 @@ iframe {
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
   background: #0175c2;
-  background: -webkit-gradient(linear, left top, right top, from(#0175c2), to(#1abc9c));
-  background: linear-gradient(left, #0175c2, #1abc9c);
+  background: -webkit-gradient(linear, left top, right top, from(#0199ff), to(#1fdeb8be));
+  background: linear-gradient(left, #0199ff, #1fdeb8be);
 }
 
 .focus-input100::after {
   font-size: 15px;
-  color: #999999;
+  color: #132741b0;
   line-height: 1.2;
   content: attr(data-placeholder);
   display: block;
@@ -300,6 +419,22 @@ iframe {
   width: 100%;
 }
 
+.input50:focus + .focus-input50::after {
+  top: -5px;
+}
+
+.input50:focus + .focus-input50::before {
+  width: 100%;
+}
+
+.has-val.input50 + .focus-input50::after {
+  top: -5px;
+}
+
+.has-val.input50 + .focus-input50::before {
+  width: 100%;
+}
+
 /*------------------------------------------------------------------
 [ Button ]*/
 .container-login100-form-btn {
@@ -322,6 +457,8 @@ iframe {
   border-radius: 25px;
   overflow: hidden;
   margin: 0 auto;
+  -webkit-box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 .login100-form-bgbtn {
@@ -329,8 +466,8 @@ iframe {
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: -webkit-gradient(linear, right top, left top, from(#0175c2), to(#1abc9c));
-  background: linear-gradient(right, #0175c2, #1abc9c);
+  background: -webkit-gradient(linear, right top, left top, from(#0478c5c0), to(#1fdeb8a9));
+  background: linear-gradient(right, #0478c5c0, #1fdeb8a9);
   top: 0;
   left: -100%;
   -webkit-transition: all 0.4s;
@@ -339,7 +476,7 @@ iframe {
 
 .login100-form-btn {
   font-size: 15px;
-  color: #fff;
+  color: #ecf0f1;
   line-height: 1.2;
   text-transform: uppercase;
   display: -webkit-box;
@@ -598,12 +735,14 @@ main {
   background: white;
   min-height: 90vh;
   width: 80%;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
   border-radius: 1rem;
   z-index: 3;
   -webkit-backdrop-filter: blur(0.5rem);
           backdrop-filter: blur(0.5rem);
+  -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -612,10 +751,13 @@ main {
 .circle1,
 .circle2,
 .circle3,
-.circle4 {
+.circle4,
+.circle5,
+.circle6,
+.circle7 {
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3));
   height: 10rem;
   width: 10rem;
   position: absolute;
@@ -637,6 +779,26 @@ main {
   right: 5%;
 }
 
+.circle4 {
+  top: 2%;
+  right: 30%;
+}
+
+.circle5 {
+  bottom: 2%;
+  left: 30%;
+}
+
+.circle6 {
+  top: 10%;
+  left: 30%;
+}
+
+.circle7 {
+  bottom: 10%;
+  right: 30%;
+}
+
 .dashboard {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -655,9 +817,11 @@ main {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   text-align: center;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.5)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.4)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4));
   border-radius: 1rem;
+  -webkit-box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard h3 {
@@ -671,8 +835,8 @@ a.fill:hover {
 }
 
 .option {
-  background-image: -webkit-gradient(linear, left bottom, right top, from(#0071bc93), to(#65c9d094));
-  background-image: linear-gradient(to right top, #0071bc93, #65c9d094);
+  background-image: -webkit-gradient(linear, right top, left bottom, from(#0071bc9f), to(#0071bc46));
+  background-image: linear-gradient(to bottom left, #0071bc9f, #0071bc46);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -682,6 +846,8 @@ a.fill:hover {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 1rem;
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
 .option img {
@@ -712,8 +878,8 @@ a.fill:hover {
 
 .info .retangle {
   background: white;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
   height: 1.5rem;
   width: 20rem;
   position: absolute;
@@ -743,7 +909,7 @@ a.fill:hover {
   opacity: 0.8;
   font-size: 24px;
   padding: 1rem 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .CadPac .formul {
@@ -751,6 +917,9 @@ a.fill:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -774,26 +943,6 @@ a.fill:hover {
   font-size: 12px;
 }
 
-.CadPac .formul input {
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
-  border: none;
-  width: 17rem;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-  margin-right: 3rem;
-  padding: 0.5rem;
-  border-radius: 1rem;
-  color: #132741;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.CadPac .formul input:focus {
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(216, 243, 239, 0.644)), to(rgba(204, 238, 243, 0.3)));
-  background: linear-gradient(to right bottom, rgba(216, 243, 239, 0.644), rgba(204, 238, 243, 0.3));
-}
-
 .CadPac .formul input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-filter: invert(12%) sepia(9%) saturate(6483%) hue-rotate(182deg) brightness(95%) contrast(93%);
           filter: invert(12%) sepia(9%) saturate(6483%) hue-rotate(182deg) brightness(95%) contrast(93%);
@@ -801,31 +950,58 @@ a.fill:hover {
 
 .CadPac .formul textarea {
   resize: none;
-  width: 90%;
-  height: 18%;
+  width: 34rem;
+  height: 14%;
   padding: 1rem;
-  margin-left: 1rem;
-  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.1)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   border-radius: 1rem;
 }
 
-.CadPac .formul textarea:focus {
+.CadPac .formul textarea:focus, .CadPac .formul textarea:hover {
   background: -webkit-gradient(linear, left top, right bottom, from(rgba(216, 243, 239, 0.644)), to(rgba(204, 238, 243, 0.3)));
   background: linear-gradient(to right bottom, rgba(216, 243, 239, 0.644), rgba(204, 238, 243, 0.3));
+}
+
+.CadPac .formul textarea::-webkit-input-placeholder {
+  color: #1327419a;
+}
+
+.CadPac .formul textarea:-ms-input-placeholder {
+  color: #1327419a;
+}
+
+.CadPac .formul textarea::-ms-input-placeholder {
+  color: #1327419a;
+}
+
+.CadPac .formul textarea::placeholder {
+  color: #1327419a;
 }
 
 .CadPac .formul button {
   float: right;
   border-radius: 1rem;
-  margin-right: 3.5rem;
-  margin-top: 0.4rem;
-  padding: 0.7rem;
-  width: 10rem;
+  width: 3rem;
   font-size: 16px;
+  margin-left: 2rem;
+  margin-right: 3rem;
   color: #ecf0f1;
-  background: -webkit-gradient(linear, left bottom, right top, from(#0071bc93), to(#65c9d094));
-  background: linear-gradient(to right top, #0071bc93, #65c9d094);
+}
+
+.CadPac .formul button img {
+  width: 3rem;
+}
+
+.CadPac .formul button img:hover {
+  background: url("../Resources/sendsec.svg");
+}
+
+.confirm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 27rem;
 }
 
 .EditPac {

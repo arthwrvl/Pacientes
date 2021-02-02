@@ -64,30 +64,62 @@
                 <h2>Cadastrar Paciente</h2>
                 <div class="formul">
                     <form method="POST">
-                        <div class="name">
-                            <input type="text" name="name" id="namepac" placeholder="Nome"/>
-                            <input type="text" name="surname" id="surpac" placeholder="Sobrenome"/>
+                        <div class="wrap-input50 nm">
+                            <input class="input50" type="text" name="user">
+                            <span class="focus-input50" data-placeholder="Nome"></span>
                         </div>
-                        <h5>Data de nascimento</h5>
-                        <div class="cpfdt">
-                            <input type="text" name="cpf" id="cpfpac" placeholder="CPF"/>
-                            <input type="date" name="dtnasc" id="dtnascpac" placeholder="Data de nascimento"/>
+                        <div class="wrap-input50 sr">
+                            <input class="input50" type="text" name="Sobrenome">
+                            <span class="focus-input50" data-placeholder="Sobrenome"></span>
                         </div>
-                        <h4>Endereço</h4>
-                        <div class="end">
-                            <input type="text" name="rua" id="ruapac" placeholder="Rua"/>
-                            <input type="text" name="bairro" id="bairropac" placeholder="Bairro"/>
-                            <input type="text" name="num" id="numpac" placeholder="Numero"/>
-                            <input type="text" name="comp" id="compac" placeholder="Complemento"/>
+                        <div class="wrap-input50 cpf">
+                            <input class="input50" type="text" name="cpf">
+                            <span class="focus-input50" data-placeholder="CPF"></span>
                         </div>
-                        <h4>Diagnóstico</h4>
-                        <div class="diag">
-                            <input type="text" name="gravid" id="gravpac" placeholder="Gravidade"/>
-                            <input type="text" name="acom" id="acompac" placeholder="Acompanhante"/>
-                            <input type="date" name="dtinic" id="dtinicsint" placeholder="Data inicial dos sintomas"/>
+                        <div class="wrap-input50 dt">
+                            <input class="input50" type="date" name="dtnasc">
+                            <span class="focus-input50" data-placeholder="Data de nascimento"></span>
                         </div>
+                        <div class="wrap-input50 ru">
+                            <input class="input50" type="text" name="rua">
+                            <span class="focus-input50" data-placeholder="Rua"></span>
+                        </div>
+                        <div class="wrap-input50 br">
+                            <input class="input50" type="text" name="bairro">
+                            <span class="focus-input50" data-placeholder="Bairro"></span>
+                        </div>
+                        <div class="wrap-input50 nu">
+                            <input class="input50" type="text" name="num">
+                            <span class="focus-input50" data-placeholder="Numero"></span>
+                        </div>
+                        <div class="wrap-input50 cm">
+                            <input class="input50" type="text" name="comp">
+                            <span class="focus-input50" data-placeholder="Complemento"></span>
+                        </div>
+                        <div class="wrap-input50 ct">
+                            <input class="input50" type="text" name="city">
+                            <span class="focus-input50" data-placeholder="Cidade"></span>
+                        </div>
+                        <div class="wrap-input50 es">
+                            <input class="input50" type="text" name="est">
+                            <span class="focus-input50" data-placeholder="Estado"></span>
+                        </div>
+                        <div class="wrap-input50 gv">
+                            <input class="input50" type="text" name="gravid">
+                            <span class="focus-input50" data-placeholder="Gravidade"></span>
+                        </div>
+                        <div class="wrap-input50 ac">
+                            <input class="input50" type="text" name="acom">
+                            <span class="focus-input50" data-placeholder="Acompanhante"></span>
+                        </div>
+                        <div class="wrap-input50 dti">
+                            <input class="input50" type="date" name="dti">
+                            <span class="focus-input50" data-placeholder="Data inicial dos sintomas"></span>
+                        </div>
+                        <div class="confirm">
                         <textarea id="sint" name="sintomas" placeholder="Sintomas separados por ponto e vírgula"></textarea>
-                        <button type="submit">Cadastrar</button>
+                        <button><img src="../Resources/send.svg"></button>
+                        </div>
                     </form>
                 </div>
             </div>

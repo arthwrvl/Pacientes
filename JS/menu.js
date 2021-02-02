@@ -16,11 +16,11 @@ function disableAll() {
     var btn3 = document.getElementById("btn3");
     var btn4 = document.getElementById("btn4");
     var btn5 = document.getElementById("btn5");
-    btn1.style.background = "linear-gradient(to right top, #0071bc93, #65c9d094)";
-    btn2.style.background = "linear-gradient(to right top, #0071bc93, #65c9d094)";
-    btn3.style.background = "linear-gradient(to right top, #0071bc93, #65c9d094)";
-    btn4.style.background = "linear-gradient(to right top, #0071bc93, #65c9d094)";
-    btn5.style.background = "linear-gradient(to right top, #0071bc93, #65c9d094)";
+    btn1.style.background = "linear-gradient(to bottom left, #0071bc9f, #0071bc46)";
+    btn2.style.background = "linear-gradient(to bottom left, #0071bc9f, #0071bc46)";
+    btn3.style.background = "linear-gradient(to bottom left, #0071bc9f, #0071bc46)";
+    btn4.style.background = "linear-gradient(to bottom left, #0071bc9f, #0071bc46)";
+    btn5.style.background = "linear-gradient(to bottom left, #0071bc9f, #0071bc46)";
 }
 function defaultview() {
     var dv1 = document.getElementById("op1");
@@ -40,11 +40,11 @@ function defaultview() {
     var btn3 = document.getElementById("btn3");
     var btn4 = document.getElementById("btn4");
     var btn5 = document.getElementById("btn5");
-    btn1.style.background = "linear-gradient(to right top, #0071bc93, #65c9d094)";
-    btn2.style.background = "linear-gradient(to right top, #0071bc93, #65c9d094)";
-    btn3.style.background = "linear-gradient(to right top, #0071bc93, #65c9d094)";
-    btn4.style.background = "linear-gradient(to right top, #0071bc93, #65c9d094)";
-    btn5.style.background = "linear-gradient(to right top, #0071bc93, #65c9d094)";
+    btn1.style.background = "linear-gradient(to bottom left, #0071bc9f, #0071bc46)";
+    btn2.style.background = "linear-gradient(to bottom left, #0071bc9f, #0071bc46)";
+    btn3.style.background = "linear-gradient(to bottom left, #0071bc9f, #0071bc46)";
+    btn4.style.background = "linear-gradient(to bottom left, #0071bc9f, #0071bc46)";
+    btn5.style.background = "linear-gradient(to bottom left, #0071bc9f, #0071bc46)";
 }
 
 function Option1() {
