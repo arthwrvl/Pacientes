@@ -9,17 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css" />
     <title>Vc consultaria agui</title>
-    <script src="../JS/menu.js"></script>
+    
 </head>
 
 <body>
     <main>
-        <section class="glass">     
+        <section class="glass">
             <div class="dashboard">
+                <a href="../index.html">
                 <div class="user">
                     <img src="../Resources/picture.svg">
                     <h3>Nome Foda</h3>
+                    <h4>Feio</h4>
                 </div>
+                </a>
                 <div class="options">
                     <a href="#" class="fill">
                         <div class="option" onclick="Option1();" id="btn1">
@@ -73,7 +76,8 @@
                             <span class="focus-input50" data-placeholder="Sobrenome"></span>
                         </div>
                         <div class="wrap-input50 cpf">
-                            <input class="input50" type="text" name="cpf" maxlength="14" onkeydown= "javascript: fMasc( this, mCPF );">
+                            <input class="input50" type="text" name="cpf" maxlength="14"
+                                onkeydown="javascript: fMasc( this, mCPF );">
                             <span class="focus-input50" data-placeholder="CPF"></span>
                         </div>
                         <div class="wrap-input50dta dt">
@@ -131,10 +135,10 @@
                         <input class="input50" type="text" name="user">
                         <span class="focus-input50" data-placeholder="Nome ou CPF"></span>
                     </div>
-                    <img src="../Resources/search.svg">
+                    <img src="../Resources/searchsec.svg">
                 </form>
             </div>
-            
+
             <div class="ListPac" id="op3">
                 <h2>Listar Pacientes</h2>
                 <div class="cards">
@@ -157,68 +161,70 @@
                             <br>
                             <span class="state">Estado: Grave</span>
                             <br>
-                            <span class="sintomas">Sintomas: Dor de cabeça; Dor de garganta; Febre; Gripe; Caganeira</span>
+                            <span class="sintomas">Sintomas: Dor de cabeça; Dor de garganta; Febre; Gripe;
+                                Caganeira</span>
                             <br>
                             <span class="acompa">Acompanhante: Lucas da Silva</span>
                             <br>
                             <span class="dtinicio">Data inicial dos sintomas: 19/09/2020</span>
-                          </div>
-                    </div>
-                </div>
-                </div>
-                    <div class="CadFunc" id="op4">
-                        <h2>Cadastrar Funcionário</h2>
-                        <div class="formul">
-                            <form method="POST">
-                                <div class="wrap-input50 nm">
-                                    <input class="input50" type="text" name="user">
-                                    <span class="focus-input50" data-placeholder="Nome"></span>
-                                </div>
-                                <div class="wrap-input50 sr">
-                                    <input class="input50" type="text" name="Sobrenome">
-                                    <span class="focus-input50" data-placeholder="Sobrenome"></span>
-                                </div>
-                                <div class="wrap-input50 cpf">
-                                    <input class="input50" type="text" name="cpf" maxlength="14" onkeydown="javascript: fMasc( this, mCPF );">
-                                    <span class="focus-input50" data-placeholder="CPF"></span>
-                                </div>
-                                <div class="wrap-input50dta dt">
-                                    <input class="input50dta" type="date" name="dtnasc">
-                                    <span class="focus-input50dta" data-placeholder="Data de nascimento"></span>
-                                </div>
-                                <div class="wrap-input50 ru">
-                                    <input class="input50" type="text" name="rua">
-                                    <span class="focus-input50" data-placeholder="Rua"></span>
-                                </div>
-                                <div class="wrap-input50 br">
-                                    <input class="input50" type="text" name="bairro">
-                                    <span class="focus-input50" data-placeholder="Bairro"></span>
-                                </div>
-                                <div class="wrap-input50 nu">
-                                    <input class="input50" type="text" name="num">
-                                    <span class="focus-input50" data-placeholder="Numero"></span>
-                                </div>
-                                <div class="wrap-input50 cm">
-                                    <input class="input50" type="text" name="comp">
-                                    <span class="focus-input50" data-placeholder="Complemento"></span>
-                                </div>
-                                <div class="wrap-input50 ct">
-                                    <input class="input50" type="text" name="city">
-                                    <span class="focus-input50" data-placeholder="Cidade"></span>
-                                </div>
-                                <div class="wrap-input50 es">
-                                    <input class="input50" type="text" name="est">
-                                    <span class="focus-input50" data-placeholder="Estado"></span>
-                                </div>
-                                <div class="wrap-input50 gv">
-                                    <input class="input50" type="text" name="func">
-                                    <span class="focus-input50" data-placeholder="Função"></span>
-                                </div>
-                                <button type="submit">Cadastrar</button>
                         </div>
                     </div>
-                    </form>
                 </div>
+            </div>
+            <div class="CadFunc" id="op4">
+                <h2>Cadastrar Funcionário</h2>
+                <div class="formul">
+                    <form method="POST">
+                        <div class="wrap-input50 nm">
+                            <input class="input50" type="text" name="user">
+                            <span class="focus-input50" data-placeholder="Nome"></span>
+                        </div>
+                        <div class="wrap-input50 sr">
+                            <input class="input50" type="text" name="Sobrenome">
+                            <span class="focus-input50" data-placeholder="Sobrenome"></span>
+                        </div>
+                        <div class="wrap-input50 cpf">
+                            <input class="input50" type="text" name="cpf" maxlength="14"
+                                onkeydown="javascript: fMasc( this, mCPF );">
+                            <span class="focus-input50" data-placeholder="CPF"></span>
+                        </div>
+                        <div class="wrap-input50dta dt">
+                            <input class="input50dta" type="date" name="dtnasc">
+                            <span class="focus-input50dta" data-placeholder="Data de nascimento"></span>
+                        </div>
+                        <div class="wrap-input50 ru">
+                            <input class="input50" type="text" name="rua">
+                            <span class="focus-input50" data-placeholder="Rua"></span>
+                        </div>
+                        <div class="wrap-input50 br">
+                            <input class="input50" type="text" name="bairro">
+                            <span class="focus-input50" data-placeholder="Bairro"></span>
+                        </div>
+                        <div class="wrap-input50 nu">
+                            <input class="input50" type="text" name="num">
+                            <span class="focus-input50" data-placeholder="Numero"></span>
+                        </div>
+                        <div class="wrap-input50 cm">
+                            <input class="input50" type="text" name="comp">
+                            <span class="focus-input50" data-placeholder="Complemento"></span>
+                        </div>
+                        <div class="wrap-input50 ct">
+                            <input class="input50" type="text" name="city">
+                            <span class="focus-input50" data-placeholder="Cidade"></span>
+                        </div>
+                        <div class="wrap-input50 es">
+                            <input class="input50" type="text" name="est">
+                            <span class="focus-input50" data-placeholder="Estado"></span>
+                        </div>
+                        <div class="wrap-input50 gv">
+                            <input class="input50" type="text" name="func">
+                            <span class="focus-input50" data-placeholder="Função"></span>
+                        </div>
+                        <button type="submit">Cadastrar</button>
+                </div>
+            </div>
+            </form>
+            </div>
             </div>
             <div class="EditFunc" id="op5">
                 <h2>Editar Funcionário</h2>
@@ -227,7 +233,7 @@
                         <input class="input50" type="text" name="user">
                         <span class="focus-input50" data-placeholder="Nome ou CPF"></span>
                     </div>
-                    <img src="../Resources/search.svg">
+                    <img src="../Resources/searchsec.svg">
                 </form>
             </div>
         </section>
@@ -240,5 +246,8 @@
 <script src="../JS/main.js"></script>
 <script src="../JS/expand.js"></script>
 <script src="../JS/cpfmask.js"></script>
+<script src="../JS/menu.js"></script>
+
+
 
 </html>
