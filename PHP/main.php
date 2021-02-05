@@ -1,3 +1,0 @@
-<?php
-    $paciente = new Paciente;
-?>
