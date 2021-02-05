@@ -4,21 +4,22 @@
 
         public function start($urlGet){
 
-            if(isset($urlGet['metodo'])){
-                $action = $urlGet['metodo'];
+            if(isset($urlGet['method'])){
+                $action = $urlGet['method'];
             }else{
                 $action = 'index';
             }
 
 
-            if(isset($urlGet['pagina'])){
-                $controller = ucfirst($urlGet['pagina'].'Controller');
+            if(isset($urlGet['page'])){
+                $controller = ucfirst($urlGet['page'].'Controller');
             }else{
                 $controller = 'HomeController';
             }
+
             
             if(!class_exists($controller)){
-                $controller = 'ErroController';
+                $controller = 'ErrorController';
             }
             
             if(isset($urlGet['id']) && $urlGet['id'] != null){

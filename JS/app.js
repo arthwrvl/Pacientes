@@ -4,9 +4,9 @@ const circle2 = document.querySelector(".circle8");
 const container = document.querySelector(".example");
 
 container.addEventListener("mousemove", (e) => {
-    let xAxis = (window.innerWidth / 2 - e.pageX) / 15;
+    let xAxis = (window.innerWidth / 2 - e.pageX) / 10;
     let yAxis = (window.innerHeight / 2 - e.pageY) / 10;
-    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    card.style.transform = `rotateY(${xAxis+35}deg) rotateX(${yAxis}deg)`;
     circle1.style.transform = `translateX(${-xAxis/2}px) translateY(${-yAxis/2}px)`;
     circle2.style.transform = `translateX(${xAxis/2}px) translateY(${yAxis/2}px)`;
 });
