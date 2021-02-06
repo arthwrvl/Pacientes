@@ -1,6 +1,6 @@
 <?php
 
-    class AdminController{
+    class UserController{
         public function index(){
             //echo file_get_contents('.//View/home.html');;
 

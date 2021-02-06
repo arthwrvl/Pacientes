@@ -15,7 +15,7 @@
     <div class="wrap">
         <div class="container-login100">
             <div class="wrap-login100">
-                <form class="login100-form validate-form">
+                <form class="login100-form validate-form" method="POST" action="http://localhost/pacientes/?page=login&method=verificarLogin">
                     <span class="login100-form-title p-b-26">
                         Bem-vindo de volta!
                     </span>
@@ -33,7 +33,8 @@
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
-                            <button class="login100-form-btn">Entrar</button> <!--header('Location: http://localhost/example/?pagina=user&metodo=index);-->
+                            <button class="login100-form-btn" type="submit">Entrar</button><!--header('Location: http://localhost/example/?pagina=login&metodo=verificarLogin);-->
+                            
                         </div>
                     </div>
 

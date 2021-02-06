@@ -37,6 +37,23 @@
             return $result;
         }
 
+        public static function verificar($dados){
+            $con = Connection::getConn();
+            $sql = "select * from administrador where login = :em and senha = :sen";
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':em', $dados['email']);
+            $sql->bindValue(':sen', $dados['pass']);
+            $res=$sql->execute();
+
+            //$result = $sql->fetchObject('Administrador');
+
+            if($sql->rowCount()==0){
+                throw new Exception("não há postagens no banco");
+                return false;
+            }
+            return true;
+        }
+
         public static function insert($dados){
             if (empty($dados['login']) || empty($dados['email']) || empty($dados['pass']) || empty($dados['cod'])){
                 throw new Exception("Preencha todos os campos");
