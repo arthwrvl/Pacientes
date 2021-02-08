@@ -9,6 +9,10 @@
 
                 $template = $twig->load('main.html');
                 
+                $parametros = array();
+                $conteudo = $template->render($parametros);
+                echo $conteudo;
+
                 /*$objPostagens = Postagem::selectAll();
 
                 $parametros = array();

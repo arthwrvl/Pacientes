@@ -1,6 +1,6 @@
 <?php
 
-    class ErrorController{
+    class Error401Controller{
         public function index(){
             //echo file_get_contents('.//View/home.html');;
 
@@ -9,7 +9,7 @@
                 $loader = new \Twig\Loader\FilesystemLoader('View');
                 $twig = new \Twig\Environment($loader);
 
-                $template = $twig->load('error.html');
+                $template = $twig->load('error401.html');
                 $parametros = array();
                 $conteudo = $template->render($parametros);
                 echo $conteudo;

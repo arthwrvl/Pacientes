@@ -39,19 +39,28 @@
 
         public static function verificar($dados){
             $con = Connection::getConn();
-            $sql = "select * from administrador where login = :em and senha = :sen";
+            $sql = "select * from administrador where login = :em";
+
             $sql = $con->prepare($sql);
             $sql->bindValue(':em', $dados['email']);
-            $sql->bindValue(':sen', $dados['pass']);
-            $res=$sql->execute();
+            $sql->execute();
 
-            //$result = $sql->fetchObject('Administrador');
+            if($sql->rowCount()==1){
 
-            if($sql->rowCount()==0){
-                throw new Exception("não há postagens no banco");
-                return false;
+                $res = $sql->fetch();
+
+                if($res['senha'] === $dados['pass']){
+                    $_SESSION['usr'] = array(
+                        'code_user' =>$res['cod'], 
+                        'name_user' => $res['nome'], 
+                        'func_user' => $res['funcao']);
+
+                    return true;
+                }
+
             }
-            return true;
+            throw new Exception("Login Inválido");
+
         }
 
         public static function insert($dados){

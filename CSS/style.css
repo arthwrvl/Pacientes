@@ -166,6 +166,13 @@ iframe {
   color: #2e498d;
 }
 
+.txterror {
+  margin-top: 2rem;
+  font-weight: 700;
+  font-size: 14px;
+  color: #C0392B;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
 .limiter {
@@ -1044,6 +1051,10 @@ main {
 
 .dashboard .user:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard .user img {
+  width: 5rem;
 }
 
 .dashboard h3 {

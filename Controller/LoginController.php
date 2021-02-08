@@ -9,9 +9,12 @@ class LoginController{
             $loader = new \Twig\Loader\FilesystemLoader('View');
             $twig = new \Twig\Environment($loader);
 
-            $template = $twig->load('main.html');
+            $template = $twig->load('login.html');
             $parametros = array();
+            $parametros['error'] = $_SESSION['msg_error'] ?? null;
             $conteudo = $template->render($parametros);
+            unset($_SESSION['msg_error']);
+            session_destroy();
             echo $conteudo;
             
 
@@ -21,28 +24,14 @@ class LoginController{
         }
 
     }
-
-    public function erroLogin(){
-        $loader = new \Twig\Loader\FilesystemLoader('View');
-        $twig = new \Twig\Environment($loader);
-
-        $template = $twig->load('login.html');
-
-        $parametros = array();
-        $conteudo = $template->render($parametros);
-        echo $conteudo;
-    }
-
-    public function verificarLogin(){
+    public function check(){
         
         try{
             Administrador::verificar($_POST);
-            
-            //echo '<script>alert("Funcionário inserido com sucesso!");</script>';
-            echo '<script>location.href="http://localhost/pacientes/?page=login&method=index"</script>';
+            echo '<script>location.href="/pacientes/dashboard"</script>';
         }catch (Exception $e){
-            echo '<script>alert("'.$e->getMessage().'");</script>';
-            echo '<script>location.href="http://localhost/pacientes/?page=login&method=erroLogin"</script>';
+            $_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
+            echo '<script>location.href="/pacientes/login"</script>';
         }
 
 

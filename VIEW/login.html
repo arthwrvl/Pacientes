@@ -1,5 +1,5 @@
 <header>
-    <a href="?page=home">
+    <a href="/pacientes">
         <img class="icon" src="./Resources/logo.svg">
     <div class="logo">     
             BeHealthy!
@@ -15,7 +15,7 @@
     <div class="wrap">
         <div class="container-login100">
             <div class="wrap-login100">
-                <form class="login100-form validate-form" method="POST" action="http://localhost/pacientes/?page=login&method=verificarLogin">
+                <form class="login100-form validate-form" method="POST" action="http://localhost/Pacientes/login/check">
                     <span class="login100-form-title p-b-26">
                         Bem-vindo de volta!
                     </span>
@@ -34,14 +34,18 @@
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
                             <button class="login100-form-btn" type="submit">Entrar</button><!--header('Location: http://localhost/example/?pagina=login&metodo=verificarLogin);-->
-                            
                         </div>
+
+                        {% if error != '' %}
+                            <span class="txterror">Credenciais inválidas</span>
+                        {% endif %}
                     </div>
+                    
 
                     <div class="text-center">
                         <span class="txt1"> Não possui uma conta? </span>
 
-                        <a class="txt2" href="?page=cadastro"> Cadastre-se </a>
+                        <a class="txt2" href="cadastro"> Cadastre-se </a>
                     </div>
                 </form>
             </div>

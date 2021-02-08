@@ -1,11 +1,14 @@
 <?php
 
+session_start();
+
 require_once 'Core/Core.php';
 require_once 'Controller/HomeController.php';
 require_once 'Controller/LoginController.php';
 require_once 'Controller/CadastroController.php';
-require_once 'Controller/UserController.php';
-require_once 'Controller/ErrorController.php';
+require_once 'Controller/DashboardController.php';
+require_once 'Controller/Error404Controller.php';
+require_once 'Controller/Error401Controller.php';
 require_once 'Database/Connection.php';
 require_once 'Model/Administrador.php';
 require_once 'Model/Paciente.php';
