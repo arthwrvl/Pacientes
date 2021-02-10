@@ -3,13 +3,14 @@
         public static function selectAll(){
             $con = Connection::getConn();
 
-            $sql = "select * from pacientes order by id desc";
+            $sql = "select * from pacientes";
             $sql = $con->prepare($sql);
             $sql->execute();
 
             $result = array();
 
             while($row = $sql->fetchObject('Pacientes')){
+                $row->sintomas = explode(';', $row->sintomas);
                 $result[] = $row;
             }
 
@@ -59,7 +60,7 @@
             $sql->bindValue(':end', $dados['rua'].$dados['bairro'].$dados['num'].$dados['comp'].$dados['city'].$dados['est']);
             $sql->bindValue(':gen', $dados['gen']);
             $sql->bindValue(':grav', $dados['gravid']);
-            $sql->bindValue(':nome', $dados['user']);
+            $sql->bindValue(':nome', $dados['user']." ".$dados['Sobrenome']);
             $sql->bindValue(':sint', $dados['sintomas']);
             $res = $sql->execute();
 

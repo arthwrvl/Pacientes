@@ -19,22 +19,28 @@
 
             return $result;
         }
-        public static function selectForId($id){
+        public static function selectCodigo($dados){
             $con = Connection::getConn();
-            $sql = "select * from administrador where id = :id";
+            $sql = "select cod from administrador where cpf = :cpf";
             $sql = $con->prepare($sql);
-            $sql->bindValue(':id', $id, PDO::PARAM_INT);
+            $sql->bindValue(':cpf', $dados['cpf']);
             $sql->execute();
 
-            $result = $sql->fetchObject('Administrador');
+            //$result = $sql->fetchObject('Administrador');
 
-            if(!$result){
-                throw new Exception("não há postagens no banco");
-            } else{
-                $result->comentarios = Comentario::selectComent($result->id);
+            if($sql->rowCount()==1){
+
+                $res = $sql->fetch();
+
+                var_dump($res['cod']);
+                $_SESSION['codigo'] = array(
+                    'code_user' =>$res['cod']
+                );
+                
+                return true;
             }
 
-            return $result;
+            throw new Exception("Erro ao buscar código do funcionário");
         }
 
         public static function verificar($dados){
@@ -60,7 +66,20 @@
 
             }
             throw new Exception("Login Inválido");
+        }
+        public static function verificarCadastro($dados){
+            $con = Connection::getConn();
+            $sql = "select * from administrador where cpf = :cpf";
 
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':cpf', $dados['cpf']);
+            $sql->execute();
+
+            if($sql->rowCount()==0){
+                Administrador::updateCadastro($dados);
+                return true;
+            }
+            throw new Exception("CPF já existe");
         }
 
         public static function insert($dados){
@@ -91,7 +110,7 @@
 
              
         }
-        public static function update($params){
+        public static function update($dados){
             $con = Connection::getConn();
 
             $sql = "update administrador set email = :em, senha = :pass, nome = :nom where id = :id";
@@ -111,6 +130,36 @@
             return true;
 
         }
+        
+        public static function updateCadastro($dados){
+            $con = Connection::getConn();
+
+            $sql = "insert into administrador(nome,cpf,dtnasc,endereco,funcao) 
+                    values (:nom, :cpf, :data_nascimento, :end, :func)";
+
+
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':nom', $dados['user']);
+            $sql->bindValue(':cpf', $dados['cpf']);
+            $sql->bindValue(':data_nascimento', $dados['dtnasc']);
+            $sql->bindValue(':end', $dados['rua'].$dados['bairro'].$dados['num'].$dados['comp'].$dados['city'].$dados['est']);
+            $sql->bindValue(':func', $dados['func']);
+            //$sql->bindValue(':id', $params['id']);
+            $res = $sql->execute();
+
+            if($res == 0){
+                throw new Exception("Falha ao editar publicação");
+                
+                return false;
+            }
+            else{
+                Administrador::selectCodigo($dados);
+            }
+
+            return true;
+
+        }
+
         public static function delete($id){
             $con = Connection::getConn();
 

@@ -1,5 +1,8 @@
 <body>
     <main>
+        {% if codigo != '' %}
+            <script>alert("{{codigo}}");</script>
+        {% endif %}
         <section class="glass">
             <div class="dashboard">
                 <a href="dashboard/logout">
@@ -52,7 +55,7 @@
             <div class="CadPac" id="op1">
                 <h2>Cadastrar Paciente</h2>
                 <div class="formul">
-                    <form method="POST">
+                    <form method="POST" action="http://localhost/Pacientes/dashboard/cadpac">
                         <div class="wrap-input50 nm">
                             <input class="input50" type="text" name="user">
                             <span class="focus-input50" data-placeholder="Nome"></span>
@@ -127,40 +130,47 @@
 
             <div class="ListPac" id="op3">
                 <h2>Listar Pacientes</h2>
+                
                 <div class="cards">
+                    {% for pac in pacs %}
                     <div class=" card [ is-collapsed ] ">
                         <div class="card__inner [ js-expander ]">
-                            <span class="nomer">Pedro, 18</span>
-                            <span class="gravidad">Grave</span>
+                            <span class="nomer">
+                                {{pac.nome}}, {{pac.data_nasc}}
+                            </span>
+                            <span class="gravidad">
+                                {{pac.gravidade}}
+                            </span>
                             <br>
-                            <span class="sintom"><img src="./Resources/spot.svg">Dor no corpo</span>
+                            {% for sint in pac.sintomas %}
+                                <span class="sintom"><img src="./Resources/spot.svg">
+                                    {{sint}}
+                                </span>
                             <br>
-                            <span class="sintom"><img src="./Resources/spot.svg">Dor de garganta</span>
-                            <br>
-                            <span class="sintom"><img src="./Resources/spot.svg">Febre</span>
-                            <br>
+                            {% endfor %}
                         </div>
                         <div class="card__expander">
-                            <span class="noming">Pedro Pereira parmalat</span>
+                            <span class="noming">{{pac.nome}}</span>
                             <br>
-                            <span class="dtnascing">15/06/2000</span>
+                            <span class="dtnascing">{{pac.data_nasc}}</span>
                             <br>
-                            <span class="state">Estado: Grave</span>
+                            <span class="state">Estado: {{pac.gravidade}}</span>
                             <br>
-                            <span class="sintomas">Sintomas: Dor de cabeça; Dor de garganta; Febre; Gripe;
-                                Caganeira</span>
+                            <span class="sintomas">Sintomas: {{pac.sintomas | join(', ')}}</span>
                             <br>
-                            <span class="acompa">Acompanhante: Lucas da Silva</span>
+                            <span class="acompa">Acompanhante: {{pac.acompanhante}}</span>
                             <br>
-                            <span class="dtinicio">Data inicial dos sintomas: 19/09/2020</span>
+                            <span class="dtinicio">Data inicial dos sintomas: {{pac.data_sintomas}}</span>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
+                
             </div>
             <div class="CadFunc" id="op4">
                 <h2>Cadastrar Funcionário</h2>
                 <div class="formul">
-                    <form method="POST">
+                    <form method="POST" action="http://localhost/Pacientes/dashboard/cadfuncdadoscompletos">
                         <div class="wrap-input50 nm">
                             <input class="input50" type="text" name="user">
                             <span class="focus-input50" data-placeholder="Nome"></span>
