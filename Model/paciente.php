@@ -134,7 +134,7 @@
 
 
             if($res == 0){
-                throw new Exception("Falha ao editar publicação");
+                throw new Exception("Falha ao editar paciente");
                 
                 return false;
             }

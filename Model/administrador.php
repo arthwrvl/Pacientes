@@ -77,7 +77,7 @@
             $sql->bindValue(':em', $dados['login']);
             $sql->execute();
             if($sql->rowCount()==0){      
-                    Administrador::update($dados);
+                    Administrador::update2($dados);
                     return true;
             }else{
                 throw new Exception("Login já cadastrado");
@@ -130,16 +130,45 @@
         public static function update($dados){
             $con = Connection::getConn();
 
-            $sql = "update administrador set login = :log, senha = :pass where cod = :cod";
+            $sql = "update administrador set nome = :nom, cpf = :cpf, dtnasc = :data_nasc, endereco = :ende, login = :log, senha = :senha, funcao = :func where cod = :cod";
+             
             $sql = $con->prepare($sql);
-            
+
+            $sql->bindValue(':nom', $dados['nome']);
+            $sql->bindValue(':cpf', $dados['cpf']);
+            $sql->bindValue(':data_nasc', $dados['dt_nasc']);
+            $sql->bindValue(':ende', $dados['end']);
             $sql->bindValue(':log', $dados['login']);
-            $sql->bindValue(':pass', $dados['pass']);
+            $sql->bindValue(':senha', $dados['pass']);
+            $sql->bindValue(':func', $dados['func']);
             $sql->bindValue(':cod', $dados['cod']);
             $res = $sql->execute();
 
             if($res == 0){
-                throw new Exception("Falha ao criar login e senha");
+                throw new Exception("Falha ao editar funcionário");
+                
+                return false;
+            }
+
+            return true;
+
+        }
+        public static function update2($dados){
+            $con = Connection::getConn();
+
+            $sql = "update administrador set login = :log, senha = :senha where cod = :cod";
+             
+            $sql = $con->prepare($sql);
+
+            
+            $sql->bindValue(':log', $dados['login']);
+            $sql->bindValue(':senha', $dados['pass']);
+            
+            $sql->bindValue(':cod', $dados['cod']);
+            $res = $sql->execute();
+
+            if($res == 0){
+                throw new Exception("Falha ao editar funcionário");
                 
                 return false;
             }
@@ -176,12 +205,13 @@
 
         }
 
-        public static function delete($id){
+        public static function delfunc($id){
             $con = Connection::getConn();
 
-            $sql = "delete from administrador where id = :id";
+            $sql = "delete from administrador where cod = :id";
             $sql = $con->prepare($sql);
-            $sql->bindValue(':id', $id);
+            $sql->bindValue(':id', $id['cod']);
+            var_dump($id['cod']);
             $res = $sql->execute();
 
             if($res == 0){
@@ -191,6 +221,41 @@
             }
 
             return true;
+
+        }
+
+        public static function selectKey($key){
+            $con = Connection::getConn();
+            $sql = "select * from administrador where nome like :nam";
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':nam', "%".$key['nome']."%");
+            $sql->execute();
+            $_SESSION['location'] = $key['place'];
+            if($sql->rowCount() == 0){
+                $sql = "select * from administrador where cpf = :nam";
+                $sql = $con->prepare($sql);
+                $sql->bindValue(':nam', $key['nome']);
+                $sql->execute();
+                if($sql->rowCount() == 0){
+                    throw new Exception("não encontrado!");
+                    return false;
+
+                }else{
+                    $result = $sql->fetchObject('Administrador');
+                }
+            }else{
+                $result = array();
+                while($row = $sql->fetchObject('Administrador')){
+                    $row->nome = explode(' ', $row->nome);
+                    $d1 = strtotime($row->dtnasc); 
+                    $d2 = strtotime(date("Y-m-d"));
+                    $row->idade = floor((($d2 - $d1) /86400) / 365);
+                    $result[] = $row;
+                }
+
+                $_SESSION['funclist'] = serialize($result);
+                return true;
+            }
 
         }
     }

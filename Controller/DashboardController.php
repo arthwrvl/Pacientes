@@ -18,10 +18,12 @@
                 $parametros['pacs'] = $colectPac;
                 $parametros['location'] = $_SESSION['location'] ?? null;
                 $parametros['lispac'] = unserialize($_SESSION['paclist'] ?? null);
+                $parametros['lisfunc'] = unserialize($_SESSION['funclist'] ?? null);
                 $conteudo = $template->render($parametros);
                 unset($_SESSION['codigo']);
                 unset($_SESSION['location']);
                 unset($_SESSION['paclist']);
+                unset($_SESSION['funclist']);
                 echo $conteudo;
             
                 //var_dump($colectPosts);
@@ -46,7 +48,15 @@
                 echo '<script>location.href="http://localhost/pacientes/dashboard"</script>';
             }
         }
-        public function del(){
+        public function delfunc(){
+            try{
+                Administrador::delfunc($_POST);
+                echo '<script>location.href="/pacientes/dashboard"</script>';
+            }catch (Exception $e){
+                echo '<script>alert("'.$e->getMessage().'");</script>';
+                echo '<script>location.href="http://localhost/pacientes/dashboard"</script>';
+            }
+        }public function del(){
             try{
                 Pacientes::delete($_POST);
                 echo '<script>location.href="/pacientes/dashboard"</script>';
@@ -85,10 +95,22 @@
             }
         }
 
-        public function edit(){
-            //procurar cpf ou nome no funcionario
-            //se existir mostrar os campos e alterar
-            //botao de remover funcionario
+        public function editfunc(){       
+            try{
+                Administrador::selectKey($_POST);
+                echo '<script>location.href="/pacientes/dashboard"</script>';
+            }catch (Exception $e){
+                echo '<script>alert("'.$e->getMessage().'");</script>';
+                echo '<script>location.href="http://localhost/pacientes/dashboard"</script>';
+            }
         }
-
+        public function updfunc(){
+            try{
+                Administrador::update($_POST);
+                echo '<script>location.href="/pacientes/dashboard"</script>';
+            }catch (Exception $e){
+                echo '<script>alert("'.$e->getMessage().'");</script>';
+                echo '<script>location.href="/pacientes/dashboard"</script>';
+            }
+        }
     }

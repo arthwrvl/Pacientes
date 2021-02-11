@@ -317,10 +317,10 @@
                     </button>
                 </form>
                 <div class="cards">
-                    {% if lispac == false %}
+                    {% if lisfunc == false %}
                     <h2>não há funcionarios para exibir</h2>
                     {% else %}
-                    {% for func in lispac %}
+                    {% for func in lisfunc %}
                     <div class=" card [ is-collapsed ] ">
                         <div class="card__inner [ js-expander ]">
                             <span class="nomer">
@@ -337,7 +337,7 @@
                         </div>
                         <div class="card__expander">
                             <form class="delete" action="http://localhost/Pacientes/dashboard/delfunc" method="POST">
-                                <input type="hidden" name="cod" value="{{pac.cod}}">
+                                <input type="hidden" name="cod" value="{{func.cod}}">
                                 <button type="submit"><img src="./Resources/close.svg"></button>
                             </form>
                             <form class="update" action="http://localhost/Pacientes/dashboard/updfunc" method="POST">
@@ -364,7 +364,7 @@
                                 <br>
                                 <span>senha:</span>
                                 <br>
-                                <input name="acom" type="password" value="{{func.senha}}">
+                                <input name="pass" type="password" value="{{func.senha}}">
                                 <br>
                                 <span>funcao:</span>
                                 <br>
@@ -388,4 +388,7 @@
 <script src="./JS/menu.js"></script>
 {% if location == 2 %}
 <script>Option2();</script>
+{% endif %}
+{% if location == 4 %}
+<script>Option5();</script>
 {% endif %}
