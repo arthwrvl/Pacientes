@@ -1,16 +1,20 @@
 <body>
     <main>
         {% if codigo != '' %}
-            <script>alert("{{codigo}}");</script>
+        <div class="popup">
+            <h3>O código de {{adname}} é:</h3>
+            <h2>{{codigo}}</h2>
+            <button onclick="okPop();">OK!</button>
+        </div>
         {% endif %}
         <section class="glass">
             <div class="dashboard">
                 <a href="dashboard/logout">
-                <div class="user">
-                    <img src="./Resources/picture.svg">
-                    <h3>{{name}}</h3>
-                    <h4>{{function}}</h4>
-                </div>
+                    <div class="user">
+                        <img src="./Resources/picture.svg">
+                        <h3>{{name}}</h3>
+                        <h4>{{function}}</h4>
+                    </div>
                 </a>
                 <div class="options">
                     <a href="#" class="fill">
@@ -112,45 +116,122 @@
                         <div class="confirm">
                             <textarea id="sint" name="sintomas"
                                 placeholder="Sintomas separados por ponto e vírgula"></textarea>
-                            <button><img src="./Resources/send.svg"></button>
+                            <button><img src="./Resources/send.svg" class="btn"></button>
                         </div>
                     </form>
                 </div>
             </div>
             <div class="EditPac" id="op2">
                 <h2>Editar Paciente</h2>
-                <form method="POST">
+                <form method="POST" action="http://localhost/Pacientes/dashboard/editpac">
                     <div class="wrap-input50 nm">
-                        <input class="input50" type="text" name="user">
+                        <input class="input50" type="text" name="nome">
                         <span class="focus-input50" data-placeholder="Nome ou CPF"></span>
                     </div>
-                    <img src="./Resources/searchsec.svg">
+                    <input name="place" type="hidden" value="2">
+                    <button type="submit">
+                        <img src="./Resources/searchsec.svg" type="submit">
+                    </button>
                 </form>
-            </div>
-
-            <div class="ListPac" id="op3">
-                <h2>Listar Pacientes</h2>
-                
                 <div class="cards">
-                    {% for pac in pacs %}
+                    {% if lispac == false %}
+                    <h2>não há pacientes para exibir</h2>
+                    {% else %}
+                    {% for pac in lispac %}
                     <div class=" card [ is-collapsed ] ">
                         <div class="card__inner [ js-expander ]">
                             <span class="nomer">
-                                {{pac.nome}}, {{pac.data_nasc}}
+                                {{pac.nome[0]}}, {{pac.idade}}
                             </span>
                             <span class="gravidad">
                                 {{pac.gravidade}}
                             </span>
                             <br>
-                            {% for sint in pac.sintomas %}
-                                <span class="sintom"><img src="./Resources/spot.svg">
-                                    {{sint}}
-                                </span>
+                            {% for i in range(0,2) %}
+                            <span class="sintom"><img src="./Resources/spot.svg">
+                                {{pac.sintomas[i]}}
+                            </span>
                             <br>
                             {% endfor %}
                         </div>
                         <div class="card__expander">
-                            <span class="noming">{{pac.nome}}</span>
+                            <form class="delete" action="http://localhost/Pacientes/dashboard/del" method="POST">
+                                <input type="hidden" name="cod" value="{{pac.cod}}">
+                                <button type="submit"><img src="./Resources/close.svg"></button>
+                            </form>
+                            <form class="update" action="http://localhost/Pacientes/dashboard/updpac" method="POST">
+                                <span>Nome:</span>
+                                <br>
+                                <input name="nome" type="text" value="{{pac.nome | join(' ')}}">
+                                <br>
+                                <input type="hidden" name="cod" value="{{pac.cod}}">
+                                <span>Cpf:</span>
+                                <br>
+                                <input name="cpf" type="text" value="{{pac.cpf}}">
+                                <br>
+                                <span>Data de nascimento:</span>
+                                <br>
+                                <input name="dt_nasc" type="text" value="{{pac.data_nasc}}">
+                                <br>
+                                <span>Genero:</span>
+                                <br>
+                                <input name="gen" type="text" value="{{pac.genero}}">
+                                <br>
+                                <span>Endereço:</span>
+                                <br>
+                                <input name="end" type="text" value="{{pac.endereco}}">
+                                <br>
+                                <span>Gravidade:</span>
+                                <br>
+                                <input name="est" type="text" value="{{pac.gravidade}}">
+                                <br>
+                                <span>Sintomas:</span>
+                                <br>
+                                <input name="sintomas" type="text" value="{{pac.sintomas | join(';')}}">
+                                <br>
+                                <span>Acompanhante:</span>
+                                <br>
+                                <input name="acom" type="text" value="{{pac.acompanhante}}">
+                                <br>
+                                <span>Data inicial dos sintomas:</span>
+                                <br>
+                                <input name="dt_inic" type="text" value="{{pac.data_sintomas}}">
+                                <br>
+                                <button type="submit"><img src="./Resources/update.svg"></button>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="ListPac" id="op3">
+                <h2>Listar Pacientes</h2>
+
+                <div class="cards">
+                    {% if pacs == false %}
+                    <h2>não há pacientes cadastrados</h2>
+                    {% else %}
+                    {% for pac in pacs %}
+                    <div class=" card [ is-collapsed ] ">
+                        <div class="card__inner [ js-expander ]">
+                            <span class="nomer">
+                                {{pac.nome[0]}}, {{pac.idade}}
+                            </span>
+                            <span class="gravidad">
+                                {{pac.gravidade}}
+                            </span>
+                            <br>
+                            {% for i in range(0,2) %}
+                            <span class="sintom"><img src="./Resources/spot.svg">
+                                {{pac.sintomas[i]}}
+                            </span>
+                            <br>
+                            {% endfor %}
+                        </div>
+                        <div class="card__expander">
+                            <span class="noming">{{pac.nome | join(' ')}}</span>
                             <br>
                             <span class="dtnascing">{{pac.data_nasc}}</span>
                             <br>
@@ -164,8 +245,9 @@
                         </div>
                     </div>
                     {% endfor %}
+                    {% endif %}
                 </div>
-                
+
             </div>
             <div class="CadFunc" id="op4">
                 <h2>Cadastrar Funcionário</h2>
@@ -224,17 +306,86 @@
             </div>
             <div class="EditFunc" id="op5">
                 <h2>Editar Funcionário</h2>
-                <form method="POST">
+                <form method="POST" action="http://localhost/Pacientes/dashboard/editfunc">
                     <div class="wrap-input50 nm">
-                        <input class="input50" type="text" name="user">
+                        <input class="input50" type="text" name="nome">
                         <span class="focus-input50" data-placeholder="Nome ou CPF"></span>
                     </div>
-                    <img src="./Resources/searchsec.svg">
+                    <input name="place" type="hidden" value="4">
+                    <button type="submit">
+                        <img src="./Resources/searchsec.svg" type="submit">
+                    </button>
                 </form>
+                <div class="cards">
+                    {% if lispac == false %}
+                    <h2>não há funcionarios para exibir</h2>
+                    {% else %}
+                    {% for func in lispac %}
+                    <div class=" card [ is-collapsed ] ">
+                        <div class="card__inner [ js-expander ]">
+                            <span class="nomer">
+                                {{func.nome[0]}}, {{func.idade}}
+                            </span>
+                            <span class="gravidad">
+                                {{func.funcao}}
+                            </span>
+                            <br>
+                            <span class="sintom"><img src="./Resources/spot.svg">
+                                {{func.login}}
+                            </span>
+                            <br>
+                        </div>
+                        <div class="card__expander">
+                            <form class="delete" action="http://localhost/Pacientes/dashboard/delfunc" method="POST">
+                                <input type="hidden" name="cod" value="{{pac.cod}}">
+                                <button type="submit"><img src="./Resources/close.svg"></button>
+                            </form>
+                            <form class="update" action="http://localhost/Pacientes/dashboard/updfunc" method="POST">
+                                <span>Nome:</span>
+                                <br>
+                                <input name="nome" type="text" value="{{func.nome | join(' ')}}">
+                                <br>
+                                <input type="hidden" name="cod" value="{{func.cod}}">
+                                <span>Cpf:</span>
+                                <br>
+                                <input name="cpf" type="text" value="{{func.cpf}}">
+                                <br>
+                                <span>Data de nascimento:</span>
+                                <br>
+                                <input name="dt_nasc" type="text" value="{{func.data_nasc}}">
+                                <br>
+                                <span>Endereço:</span>
+                                <br>
+                                <input name="end" type="text" value="{{func.endereco}}">
+                                <br>
+                                <span>login:</span>
+                                <br>
+                                <input name="login" type="text" value="{{func.login}}">
+                                <br>
+                                <span>senha:</span>
+                                <br>
+                                <input name="acom" type="password" value="{{func.senha}}">
+                                <br>
+                                <span>funcao:</span>
+                                <br>
+                                <input name="func" type="text" value="{{func.funcao}}">
+                                <br>
+                                <button type="submit"><img src="./Resources/update.svg"></button>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
             </div>
         </section>
 
     </main>
     <div class="circle1"></div>
     <div class="circle2"></div>
+
 </body>
+<script src="./JS/menu.js"></script>
+{% if location == 2 %}
+<script>Option2();</script>
+{% endif %}

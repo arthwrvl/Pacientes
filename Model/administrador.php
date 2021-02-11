@@ -21,7 +21,7 @@
         }
         public static function selectCodigo($dados){
             $con = Connection::getConn();
-            $sql = "select cod from administrador where cpf = :cpf";
+            $sql = "select * from administrador where cpf = :cpf";
             $sql = $con->prepare($sql);
             $sql->bindValue(':cpf', $dados['cpf']);
             $sql->execute();
@@ -34,7 +34,8 @@
 
                 var_dump($res['cod']);
                 $_SESSION['codigo'] = array(
-                    'code_user' =>$res['cod']
+                    'code_user' =>$res['cod'],
+                    'namen_user' =>$res['nome']
                 );
                 
                 return true;
@@ -67,6 +68,22 @@
             }
             throw new Exception("Login Inválido");
         }
+
+        public static function verificarC($dados){
+            $con = Connection::getConn();
+            $sql = "select * from administrador where login = :em";
+
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':em', $dados['login']);
+            $sql->execute();
+            if($sql->rowCount()==0){      
+                    Administrador::update($dados);
+                    return true;
+            }else{
+                throw new Exception("Login já cadastrado");
+            }
+            
+        }
         public static function verificarCadastro($dados){
             $con = Connection::getConn();
             $sql = "select * from administrador where cpf = :cpf";
@@ -76,13 +93,13 @@
             $sql->execute();
 
             if($sql->rowCount()==0){
-                Administrador::updateCadastro($dados);
+                Administrador::realizarCadastro($dados);
                 return true;
             }
             throw new Exception("CPF já existe");
         }
 
-        public static function insert($dados){
+       /* public static function insert($dados){
             if (empty($dados['login']) || empty($dados['email']) || empty($dados['pass']) || empty($dados['cod'])){
                 throw new Exception("Preencha todos os campos");
 
@@ -109,20 +126,20 @@
 
 
              
-        }
+        }*/
         public static function update($dados){
             $con = Connection::getConn();
 
-            $sql = "update administrador set email = :em, senha = :pass, nome = :nom where id = :id";
+            $sql = "update administrador set login = :log, senha = :pass where cod = :cod";
             $sql = $con->prepare($sql);
-            $sql->bindValue(':nom', $dados['nome']);
-            $sql->bindValue(':senha', $dados['pass']);
+            
             $sql->bindValue(':log', $dados['login']);
-            $sql->bindValue(':id', $params['id']);
+            $sql->bindValue(':pass', $dados['pass']);
+            $sql->bindValue(':cod', $dados['cod']);
             $res = $sql->execute();
 
             if($res == 0){
-                throw new Exception("Falha ao editar publicação");
+                throw new Exception("Falha ao criar login e senha");
                 
                 return false;
             }
@@ -131,7 +148,7 @@
 
         }
         
-        public static function updateCadastro($dados){
+        public static function realizarCadastro($dados){
             $con = Connection::getConn();
 
             $sql = "insert into administrador(nome,cpf,dtnasc,endereco,funcao) 
@@ -142,14 +159,13 @@
             $sql->bindValue(':nom', $dados['user']);
             $sql->bindValue(':cpf', $dados['cpf']);
             $sql->bindValue(':data_nascimento', $dados['dtnasc']);
-            $sql->bindValue(':end', $dados['rua'].$dados['bairro'].$dados['num'].$dados['comp'].$dados['city'].$dados['est']);
+            $sql->bindValue(':end', $dados['rua'].", ".$dados['num']." - ".$dados['bairro']." ".$dados['comp']."; ".$dados['city']." - ".$dados['est']);
             $sql->bindValue(':func', $dados['func']);
             //$sql->bindValue(':id', $params['id']);
             $res = $sql->execute();
 
             if($res == 0){
-                throw new Exception("Falha ao editar publicação");
-                
+                throw new Exception("Falha ao cadastrar funcionario");      
                 return false;
             }
             else{

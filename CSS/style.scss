@@ -1,3 +1,21 @@
+$background_Dblue: #192a56;
+$background_Gblue: #2f3640;
+
+$T_color: #ecf0f1;
+$T_colorTransp: #ecf0f1c5;
+
+@mixin background($direction) {
+    background-image: linear-gradient($direction, $background_Dblue 0%, $background_Gblue 100%);
+}
+
+@mixin darkglass($direction, $opacityS, $opacityE) {
+    background-image: linear-gradient($direction, rgba(0, 0, 0, $opacityS), rgba(0, 0, 0, $opacityE));
+}
+
+@mixin lightglass($direction, $opacityS, $opacityE) {
+    background-image: linear-gradient($direction, rgba(255, 255, 255, $opacityS), rgba(255, 255, 255, $opacityE));
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -6,8 +24,11 @@
 }
 
 .wrap {
+
+    @include background(20deg);
+
     z-index: -2;
-    background-image: linear-gradient(20deg, #192a56 0%, #2f3640 100%);
+
     background-position: center;
     background-size: cover;
     min-height: 100vh;
@@ -61,11 +82,19 @@ li {
 input {
     outline: none;
     border: none;
+
+    &::placeholder {
+        color: $T_colorTransp;
+    }
 }
 
 textarea {
     outline: none;
     border: none;
+
+    &::placeholder {
+        color: $T_colorTransp;
+    }
 }
 
 textarea:focus,
@@ -105,47 +134,15 @@ textarea:focus:-ms-input-placeholder {
     color: transparent;
 }
 
-input::-webkit-input-placeholder {
-    color: #ecf0f1c5;
-}
-
-input:-moz-placeholder {
-    color: #ecf0f1c5;
-}
-
-input::-moz-placeholder {
-    color: #ecf0f1c5;
-}
-
-input:-ms-input-placeholder {
-    color: #ecf0f1c5;
-}
-
-textarea::-webkit-input-placeholder {
-    color: #ecf0f1c5;
-}
-
-textarea:-moz-placeholder {
-    color: #ecf0f1c5;
-}
-
-textarea::-moz-placeholder {
-    color: #ecf0f1c5;
-}
-
-textarea:-ms-input-placeholder {
-    color: #ecf0f1c5;
-}
-
 /*---------------------------------------------*/
 button {
     outline: none !important;
     border: none;
     background: transparent;
-}
 
-button:hover {
-    cursor: pointer;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 iframe {
@@ -157,7 +154,7 @@ iframe {
 [ Utility ]*/
 .txt1 {
     font-size: 12px;
-    color: #ecf0f1c5;
+    color: $T_color;
 }
 
 .txt2 {
@@ -165,7 +162,8 @@ iframe {
     font-size: 14px;
     color: #2e498d;
 }
-.txterror{
+
+.txterror {
     margin-top: 2rem;
     font-weight: 700;
     font-size: 14px;
@@ -181,6 +179,7 @@ iframe {
 }
 
 .container-login100 {
+    @include background(to left bottom);
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -188,7 +187,6 @@ iframe {
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background-image: linear-gradient(to left bottom, #192a56 0%, #2f3640 100%);
 }
 
 .func {
@@ -198,7 +196,7 @@ iframe {
 
 .wrap-login100 {
     width: 390px;
-    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+    @include darkglass(to right bottom, 0.1, 0.4);
     border-radius: 10px;
     overflow: hidden;
     padding: 77px 55px 33px 55px;
@@ -219,7 +217,7 @@ iframe {
     font-weight: 900;
     display: block;
     font-size: 30px;
-    color: #ecf0f1c5;
+    color: $T_colorTransp;
     line-height: 1.2;
     text-align: center;
 }
@@ -234,21 +232,21 @@ iframe {
 .wrap-input100 {
     width: 100%;
     position: relative;
-    border-bottom: 2px solid #ecf0f1c5;
+    border-bottom: 2px solid $T_colorTransp;
     margin-bottom: 37px;
 }
 
 .wrap-input50 {
     width: 20%;
     position: absolute;
-    border-bottom: 2px solid #ecf0f1c5;
+    border-bottom: 2px solid $T_colorTransp;
     margin-bottom: 37px;
 }
 
 .wrap-input50dta {
     width: 20%;
     position: absolute;
-    border-bottom: 2px solid #ecf0f1c5;
+    border-bottom: 2px solid $T_colorTransp;
     margin-bottom: 37px;
 }
 
@@ -317,7 +315,7 @@ iframe {
 
 .input100 {
     font-size: 15px;
-    color: #ecf0f1c5;
+    color: $T_colorTransp;
     line-height: 1.2;
 
     display: block;
@@ -326,7 +324,8 @@ iframe {
     background: transparent;
     padding: 0 5px;
     transition: all 0.2s ease-in-out;
-    &:hover{
+
+    &:hover {
         background: rgba(0, 0, 0, 0.1);
         transform: translateY(2px);
     }
@@ -334,7 +333,7 @@ iframe {
 
 .input50 {
     font-size: 15px;
-    color: #ecf0f1c5;
+    color: $T_colorTransp;
     font-weight: 500;
     line-height: 1.2;
     width: 100%;
@@ -342,7 +341,8 @@ iframe {
     background: transparent;
     padding: 0 5px;
     transition: all 0.2s ease-in-out;
-    &:hover{
+
+    &:hover {
         background: rgba(0, 0, 0, 0.1);
         transform: translateY(2px);
     }
@@ -351,14 +351,15 @@ iframe {
 .input50dta {
     font-size: 15px;
     font-weight: 500;
-    color: #ecf0f1c5;
+    color: $T_colorTransp;
     line-height: 1.2;
     width: 100%;
     height: 45px;
     background: transparent;
     padding: 0 5px;
     transition: all 0.2s ease-in-out;
-    &:hover{
+
+    &:hover {
         background: rgba(0, 0, 0, 0.1);
         transform: translateY(2px);
     }
@@ -411,7 +412,7 @@ iframe {
 
 .focus-input50dta::after {
     font-size: 12px;
-    color: #ecf0f1c5;
+    color: $T_colorTransp;
     line-height: 1.2;
     content: attr(data-placeholder);
     width: 100%;
@@ -438,7 +439,7 @@ iframe {
 .focus-input50::after {
     font-size: 15px;
     font-weight: 500;
-    color: #ecf0f1c5;
+    color: $T_colorTransp;
     line-height: 1.2;
     content: attr(data-placeholder);
     width: 100%;
@@ -481,7 +482,7 @@ iframe {
 
 .focus-input100::after {
     font-size: 15px;
-    color: #ecf0f1;
+    color: $T_color;
     ;
     line-height: 1.2;
 
@@ -563,7 +564,7 @@ iframe {
 
 .login100-form-btn {
     font-size: 18px;
-    color: #ecf0f1;
+    color: $T_color;
     line-height: 1.2;
     display: flex;
     font-weight: 700;
@@ -626,7 +627,7 @@ header {
         padding: 0.5vh 2vh;
         font-size: 28px;
         font-weight: 700;
-        color: #ecf0f1;
+        color: $T_color;
         float: left;
         text-shadow: 2px 2px 4px rgba($color: #000000, $alpha: 0.3);
     }
@@ -643,7 +644,7 @@ header {
         font-weight: 700;
         border-radius: 1rem;
         background-color: transparent;
-        color: #ecf0f1;
+        color: $T_color;
         transition: all 0.2s ease-in-out;
         box-shadow: 2px 2px 4px rgba($color: #000000, $alpha: 0.3);
     }
@@ -655,8 +656,8 @@ header {
     ul li button:focus {
         outline: none;
         background-color: transparent;
-        color: #ecf0f1;
-        border-color: #ecf0f1;
+        color: $T_color;
+        border-color: $T_color;
     }
 
 }
@@ -669,7 +670,7 @@ header {
     justify-content: space-evenly;
     display: flex;
 
-    color: #ecf0f1;
+    color: $T_color;
 
     h1 {
         padding: 220px 120px 0;
@@ -691,17 +692,16 @@ header {
 
 .example {
     width: 70%;
-    min-height: 100vh;   
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+
     .card1 {
+
         transform-style: preserve-3d;
         margin-right: 4rem;
-        background: white;
-        background: linear-gradient(to right bottom,
-                rgba(255, 255, 255, 0.02),
-                rgba(255, 255, 255, 0.07));
+        @include lightglass(to right bottom, 0.02, 0.07);
         height: 20rem;
         width: 15rem;
         position: absolute;
@@ -709,6 +709,7 @@ header {
         backdrop-filter: blur(1.5rem);
         box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.4);
         padding: 1.5rem;
+
         span {
             justify-content: center;
             align-items: center;
@@ -728,7 +729,7 @@ header {
         .nomer {
 
             font-weight: 700;
-            color: #ecf0f1;
+            color: $T_color;
             font-size: 32px;
         }
 
@@ -742,7 +743,7 @@ header {
 
         .sintom {
             font-weight: 700;
-            color: #ecf0f1;
+            color: $T_color;
             font-size: 18px;
         }
     }
@@ -750,26 +751,9 @@ header {
 }
 
 
-table {
-    width: 100%;
-}
-
-table,
-th,
-td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    padding: 5px;
-    text-align: left;
-}
-
 .nav-list {
 
-    background-color: #dfe6e9;
+    background-color: $T_color;
     height: 10vh;
     display: flex;
     width: 100%;
@@ -790,15 +774,18 @@ td {
     color: black;
     font-size: 18px;
 }
+
 .bg {
+    @include background(to left bottom);
     min-height: 100vh;
     min-width: 100vh;
-    background-image: -webkit-gradient(linear, 100% 100%, 0% 0%, from(rgb(25, 42, 86)), to(rgb(47, 54, 64)));
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.abstract1, .abstract2 {
+
+.abstract1,
+.abstract2 {
     position: absolute;
     width: 70%;
 }
@@ -807,6 +794,7 @@ td {
     top: 0%;
     right: 0%;
 }
+
 .abstract1 {
     bottom: 0%;
     left: 0%;
@@ -822,29 +810,31 @@ td {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+    @include darkglass(to bottom right, 0.1, 0.3);
     border-radius: 1rem;
 
-    img{
+    img {
         width: 60%;
     }
 
-    h2{
-        color: #ecf0f1;
+    h2 {
+        color: $T_color;
         font-size: 24px;
 
     }
-    button{
+
+    button {
         margin: 2rem;
         padding: 1rem 2rem;
-        color: #ecf0f1;
+        color: $T_color;
         font-size: 16px;
         font-weight: 700;
         border-radius: 1rem;
         background-color: rgba(255, 255, 255, 0.02);
-        box-shadow:  0px 5px 10px 5px rgba(0, 0, 0, 0.1) , 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1), 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
         transition: all 0.2s ease-in-out;
-        &:hover{
+
+        &:hover {
             transform: scale(1.03);
             background-color: rgba(255, 255, 255, 0.1);
         }
@@ -854,8 +844,8 @@ td {
 
 
 main {
+    @include background(-20deg);
     min-height: 100vh;
-    background-image: linear-gradient(-20deg, #192a56 0%, #2f3640 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -863,10 +853,9 @@ main {
 }
 
 .glass {
-    background: white;
     min-height: 90vh;
     width: 80%;
-    background: linear-gradient(to right bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+    @include darkglass(to bottom right, 0.1, 0.3);
     border-radius: 1rem;
     z-index: 3;
     backdrop-filter: blur(1.5rem);
@@ -883,10 +872,7 @@ main {
 .circle6,
 .circle7,
 .circle8 {
-    background: white;
-    background: linear-gradient(to right bottom,
-            rgba(255, 255, 255, 0.6),
-            rgba(255, 255, 255, 0.3));
+    @include lightglass(to bottom right, 0.6, 0.3);
     height: 10rem;
     width: 10rem;
     position: absolute;
@@ -910,8 +896,9 @@ main {
     width: 7rem;
     height: 7rem;
     background-image: linear-gradient(to right top, #f43b47 0%, #453a94 100%);
-    
+
 }
+
 .circle8 {
     top: 19%;
     right: 11%;
@@ -940,6 +927,52 @@ main {
     right: 30%;
 }
 
+.popup {
+    z-index: 50;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 25%;
+    height: 30%;
+    border-radius: 1rem;
+    @include darkglass(to top left, 0.2, 0.4);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(1.5rem);
+    box-shadow: 5px 5px 40px 5px rgba(0, 0, 0, 0.2), 5px 5px 10px 1px rgba(0, 0, 0, 0.5);
+
+    h2 {
+        font-size: 18px;
+        color: #C0392B;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        text-shadow: 4px 4px 10px rgba($color: #000000, $alpha: 0.8);
+    }
+
+    h3 {
+        font-size: 16px;
+        color: $T_color;
+    }
+
+    button {
+        color: $T_color;
+        font-weight: 600;
+        font-size: 16px;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 1rem;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0 0 1rem 1rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
 .dashboard {
     flex: 1;
     display: flex;
@@ -947,12 +980,11 @@ main {
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
-    background: linear-gradient(to right bottom,
-            rgba(0, 0, 0, 0),
-            rgba(0, 0, 0, 0.4));
+    @include darkglass(to bottom right, 0, 0.4);
     border-radius: 1rem;
     box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.3);
-    .user{
+
+    .user {
         padding-top: 1rem;
         padding-left: 5rem;
         padding-right: 5rem;
@@ -960,25 +992,30 @@ main {
         border-radius: 1rem;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
-        &:hover{
+
+        &:hover {
             background: rgba(255, 255, 255, 0.1);
         }
-        img{
+
+        img {
             width: 5rem;
         }
     }
+
     h3 {
         font-size: 18px;
-        color: #ecf0f1;
+        color: $T_color;
         opacity: 0.8;
     }
+
     h4 {
         font-size: 14px;
         color: #8192aa;
         opacity: 0.8;
         font-weight: 400;
     }
-    a:hover{
+
+    a:hover {
         text-decoration: none;
     }
 
@@ -996,6 +1033,7 @@ a.fill:hover {
     border-radius: 1rem;
     box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.25);
     transition: all 0.1s ease-in-out;
+
     img {
         width: 1.7rem;
     }
@@ -1003,10 +1041,11 @@ a.fill:hover {
     h2 {
         font-size: 14px;
         font-weight: 400;
-        color: #ecf0f1;
+        color: $T_color;
         padding: 0rem 2rem;
     }
-    &:hover{
+
+    &:hover {
         transform: scale(1.02);
     }
 }
@@ -1018,10 +1057,7 @@ a.fill:hover {
     justify-content: center;
 
     .retangle {
-        background: #ecf0f1;
-        background: linear-gradient(to right bottom,
-                rgba(255, 255, 255, 0.1),
-                rgba(255, 255, 255, 0));
+        @include lightglass(to bottom right, 0.1, 0);
         height: 1.5rem;
         width: 20rem;
         position: absolute;
@@ -1031,7 +1067,7 @@ a.fill:hover {
 
     h2 {
         font-size: 24px;
-        color:#ecf0f1;
+        color: $T_color;
         opacity: 0.8;
     }
 }
@@ -1047,7 +1083,7 @@ a.fill:hover {
     flex-direction: column;
 
     h2 {
-        color: #ecf0f1;
+        color: $T_color;
         opacity: 0.8;
         font-size: 24px;
         padding: 1rem 1.5rem;
@@ -1063,13 +1099,13 @@ a.fill:hover {
         h5 {
             margin-left: 22.5rem;
             margin-bottom: 0.3rem;
-            color: #ecf0f1;
+            color: $T_color;
         }
 
         h4 {
             margin-left: 1.1rem;
             margin-bottom: 0.3rem;
-            color: #ecf0f1;
+            color: $T_color;
             font-size: 14px;
         }
 
@@ -1089,7 +1125,7 @@ a.fill:hover {
         }
 
         textarea {
-            color: #ecf0f1;
+            color: $T_color;
             resize: none;
             width: 34rem;
             height: 14%;
@@ -1097,12 +1133,14 @@ a.fill:hover {
             background: rgba(0, 0, 0, 0.3);
             border-radius: 1rem;
             transition: all 0.4s ease-in-out;
+
             &:focus,
             &:hover {
                 background: rgba(0, 0, 0, 0.1);
             }
+
             &::placeholder {
-                color: #ecf0f1;
+                color: $T_color;
             }
         }
     }
@@ -1116,13 +1154,14 @@ a.fill:hover {
         font-size: 16px;
         margin-left: 1rem;
         margin-right: 3rem;
-        color: #ecf0f1;
-        
-        
+        color: $T_color;
+
+
         img {
             opacity: 0.5;
             width: 3rem;
             transition: all 0.2s ease-in-out;
+
             &:hover {
                 opacity: 1;
                 transform: translateX(20px);
@@ -1139,10 +1178,11 @@ a.fill:hover {
         height: 2.5rem;
         background: rgba(0, 0, 0, 0.2);
         border-radius: 1rem;
-        color: #ecf0f1;
+        color: $T_color;
         line-height: 1.2;
         box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1);
         transition: all 0.2s ease-in-out;
+
         &:hover {
             transform: scale(1.02);
             background: rgba(255, 255, 255, 0.3);
@@ -1158,17 +1198,29 @@ a.fill:hover {
 
 .EditPac,
 .EditFunc {
-    img {
-        width: 1.7rem;
-        margin-top: 1rem;
-        margin-left: 15rem;
-        transition: all 0.4s ease-in-out;
-        opacity: 0.2;
-        &:hover {
-            transform: rotateZ(90deg);
-            cursor: pointer;
-            opacity: 1;
+    button {
+        img {
+            width: 1.7rem;
+            margin-top: 1rem;
+            margin-left: 15rem;
+            transition: all 0.4s ease-in-out;
+            opacity: 0.2;
+
+            &:hover {
+                transform: rotateZ(90deg);
+                cursor: pointer;
+                opacity: 1;
+            }
         }
+
+    }
+
+    .cards {
+        padding: 15px;
+        display: flex;
+        flex-flow: row wrap;
+        overflow-y: auto;
+        height: 70vh;
     }
 }
 
@@ -1189,20 +1241,20 @@ a.fill:hover {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+    @include darkglass(to bottom right, 0.1, 0.2);
     border-radius: 10px;
 
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4));
+    @include darkglass(to bottom right, 0.3, 0.4);
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+    @include darkglass(to bottom right, 0.7, 0.9);
 }
 
 .cards {
@@ -1224,7 +1276,7 @@ a.fill:hover {
 
         .card__inner {
             border-radius: 1rem;
-            background-color: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+            @include darkglass(to bottom right, 0.3, 0.5);
             transform: scale(1.05);
         }
     }
@@ -1237,7 +1289,7 @@ a.fill:hover {
         padding: 1rem;
         position: relative;
         cursor: pointer;
-        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
+        @include darkglass(left, 0.2, 0.3);
         transition: all 0.2s ease-in-out;
 
         &:after {
@@ -1263,7 +1315,7 @@ a.fill:hover {
         .nomer {
 
             font-weight: 700;
-            color: #ecf0f1;
+            color: $T_color;
             font-size: 18px;
         }
 
@@ -1277,21 +1329,15 @@ a.fill:hover {
 
         .sintom {
             font-weight: 700;
-            color: #ecf0f1;
+            color: $T_color;
             font-size: 14px;
-        }
-
-        .fa {
-            color: white;
-            width: 100%;
-            margin-top: .25em;
         }
     }
 
     //Expander
     &__expander {
         transition: all 0.2s ease-in-out;
-        background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+        @include darkglass(to bottom right, 0.3, 0.7);
         width: 100%;
         position: relative;
         border-radius: 1rem;
@@ -1299,9 +1345,90 @@ a.fill:hover {
         flex-direction: column;
         padding: 1rem;
         text-transform: uppercase;
-        color: #ecf0f1;
+        color: $T_color;
         font-weight: 600;
         font-size: 14px;
+
+        .delete {
+            button {
+                position: absolute;
+                background: transparent;
+                width: 2rem;
+                height: 2rem;
+                right: 0%;
+                top: -3%;
+
+            }
+
+            img {
+                width: 2rem;
+                position: absolute;
+                right: 0%;
+                top: 0%;
+                filter: invert(88%) sepia(8%) saturate(69%) hue-rotate(145deg) brightness(109%) contrast(91%);
+
+                &:hover {
+                    filter: invert(28%) sepia(18%) saturate(7332%) hue-rotate(344deg) brightness(90%) contrast(88%);
+                }
+            }
+        }
+
+        .update {
+            button {
+                position: absolute;
+                background: transparent;
+                width: 2rem;
+                height: 2rem;
+                right: 5%;
+                bottom: 5%;
+            }
+
+            img {
+                width: 2rem;
+                position: absolute;
+                right: 0%;
+                bottom: 0%;
+                filter: invert(88%) sepia(8%) saturate(69%) hue-rotate(145deg) brightness(109%) contrast(91%);
+
+                &:hover {
+                    filter: invert(21%) sepia(77%) saturate(1150%) hue-rotate(223deg) brightness(93%) contrast(95%);
+                }
+            }
+        }
+
+
+        form {
+            margin-left: 5%;
+
+            span {
+                font-size: 12px;
+                font-weight: 300;
+                text-transform: none;
+                color: $T_colorTransp;
+            }
+
+            input {
+                background: transparent;
+                padding: 0.5rem;
+                width: 80%;
+                color: $T_colorTransp;
+                font-size: 14px;
+                font-weight: 700;
+                border-bottom: 2px solid $T_colorTransp;
+                margin-bottom: 0.5rem;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0.1);
+                    border-bottom: 2px solid #453a94;
+                }
+
+                &:focus {
+                    border-bottom: 2px solid $background_Gblue;
+                }
+
+            }
+        }
 
         .fa {
             font-size: 0.75em;
@@ -1336,7 +1463,7 @@ a.fill:hover {
     &.is-expanded {
 
         .card__inner {
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+            @include darkglass(left, 0.3, 0.5);
 
             &:after {
                 content: "";
