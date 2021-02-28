@@ -1,6 +1,7 @@
 $background_Dblue: #192a56;
 $background_Gblue: #2f3640;
-
+$bg_colorTranspHl: #11111170;
+$bg_colorTransp: #ecf0f11a;
 $T_color: #ecf0f1;
 $T_colorTransp: #ecf0f1c5;
 
@@ -1073,9 +1074,9 @@ a.fill:hover {
 }
 
 .CadPac,
-.CadFunc,
+.Func,
 .EditPac,
-.EditFunc,
+.Cons,
 .ListPac,
 .EditUser {
     flex: 2;
@@ -1147,46 +1148,230 @@ a.fill:hover {
 }
 
 .CadPac {
-    button {
-        float: right;
-        border-radius: 1rem;
-        width: 4rem;
-        font-size: 16px;
-        margin-left: 1rem;
-        margin-right: 3rem;
-        color: $T_color;
+
+    .cading {
+        button {
+            float: right;
+            border-radius: 1rem;
+            width: 4rem;
+            font-size: 16px;
+            margin-left: 1rem;
+            margin-right: 3rem;
+            color: $T_color;
+
+            img {
+                opacity: 0.5;
+                width: 3rem;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    opacity: 1;
+                    transform: translateX(20px);
+                }
+            }
+        }
 
 
-        img {
-            opacity: 0.5;
-            width: 3rem;
+    }
+
+    .buttons {
+        margin: 1rem;
+        display: flex;
+        width: 36rem;
+
+        #cad1 {
+            border-radius: 1rem 0 0 1rem;
+            text-align: right;
+            font-weight: 700;
+            background-color: $bg_colorTranspHl;
+        }
+
+        #edit1 {
+            border-radius: 0;
+            text-align: center;
+        }
+
+        #view1 {
+            border-radius: 0rem 1rem 1rem 0rem;
+            text-align: left;
+        }
+
+        button {
+            flex: 1;
+            margin: 0;
+            padding: 0.5rem;
+            background-color: $bg_colorTransp;
+            color: $T_color;
+            opacity: 0.8;
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
             transition: all 0.2s ease-in-out;
 
             &:hover {
-                opacity: 1;
-                transform: translateX(20px);
+                transform: scale(1.02);
+                background-color: $bg_colorTranspHl;
+            }
+
+
+        }
+    }
+
+    .EditPac {
+        .subbt {
+            button {
+                img {
+                    width: 1.7rem;
+                    margin-top: 1rem;
+                    margin-left: 15rem;
+                    transition: all 0.4s ease-in-out;
+                    opacity: 0.2;
+
+                    &:hover {
+                        transform: rotateZ(90deg);
+                        cursor: pointer;
+                        opacity: 1;
+                    }
+                }
             }
         }
     }
 }
 
-.CadFunc {
-    button {
-        margin-left: 11rem;
-        margin-top: 19.4rem;
-        width: 13.4rem;
-        height: 2.5rem;
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 1rem;
-        color: $T_color;
-        line-height: 1.2;
-        box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1);
-        transition: all 0.2s ease-in-out;
+.Func {
+    .cadFb {
+        button {
+            margin-left: 43%;
+            margin-top: 145%;
+            width: 13.4rem;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 1rem;
+            color: $T_color;
+            line-height: 1.2;
+            box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
 
-        &:hover {
-            transform: scale(1.02);
-            background: rgba(255, 255, 255, 0.3);
+            &:hover {
+                transform: scale(1.02);
+                background: rgba(255, 255, 255, 0.3);
 
+            }
+        }
+    }
+
+    .EditFunc {
+        display: none;
+        flex-direction: column;
+
+        h2 {
+            color: $T_color;
+            opacity: 0.8;
+            font-size: 24px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .buttons {
+        margin: 1rem;
+        display: flex;
+        width: 24rem;
+
+        #cad2 {
+            border-radius: 1rem 0 0 1rem;
+            text-align: right;
+            font-weight: 700;
+            background-color: $bg_colorTranspHl;
+        }
+
+        #edit2 {
+            border-radius: 0rem 1rem 1rem 0rem;
+            text-align: left;
+        }
+
+        button {
+            flex: 1;
+            margin: 0;
+            padding: 0.5rem;
+            background-color: $bg_colorTransp;
+            color: $T_color;
+            opacity: 0.8;
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background-color: $bg_colorTranspHl;
+            }
+        }
+    }
+
+    .subbt {
+        button {
+            img {
+                width: 1.7rem;
+                margin-top: 1rem;
+                margin-left: 15rem;
+                transition: all 0.4s ease-in-out;
+                opacity: 0.2;
+
+                &:hover {
+                    transform: rotateZ(90deg);
+                    cursor: pointer;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.Cons {
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(98%) sepia(8%) saturate(73%) hue-rotate(147deg) brightness(94%) contrast(102%);
+        opacity: 0.8;
+    }
+
+    input[type="time"]::-webkit-calendar-picker-indicator {
+        filter: invert(98%) sepia(8%) saturate(73%) hue-rotate(147deg) brightness(94%) contrast(102%);
+        opacity: 0.8;
+    }
+
+    .buttons {
+        margin: 1rem;
+        display: flex;
+        width: 24rem;
+
+        #marc1 {
+            border-radius: 1rem 0 0 1rem;
+            text-align: right;
+            font-weight: 700;
+            background-color: $bg_colorTranspHl;
+        }
+
+        #real1 {
+            border-radius: 0rem 1rem 1rem 0rem;
+            text-align: left;
+            background-color: $bg_colorTransp;
+        }
+
+        button {
+            flex: 1;
+            margin: 0;
+            padding: 0.5rem;
+            background-color: $bg_colorTransp;
+            color: $T_color;
+            opacity: 0.8;
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                transform: scale(1.02);
+                background-color: $bg_colorTranspHl;
+            }
         }
     }
 }
@@ -1196,32 +1381,12 @@ a.fill:hover {
     margin-top: 27rem;
 }
 
-.EditPac,
-.EditFunc {
-    button {
-        img {
-            width: 1.7rem;
-            margin-top: 1rem;
-            margin-left: 15rem;
-            transition: all 0.4s ease-in-out;
-            opacity: 0.2;
-
-            &:hover {
-                transform: rotateZ(90deg);
-                cursor: pointer;
-                opacity: 1;
-            }
-        }
-
-    }
-
-    .cards {
-        padding: 15px;
-        display: flex;
-        flex-flow: row wrap;
-        overflow-y: auto;
-        height: 70vh;
-    }
+.cards {
+    padding: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y: auto;
+    height: 70vh;
 }
 
 .ListPac {
@@ -1262,7 +1427,7 @@ a.fill:hover {
     display: flex;
     flex-flow: row wrap;
     overflow-y: auto;
-    height: 78vh;
+    height: 70vh;
 }
 
 //Cards
@@ -1553,5 +1718,4 @@ a.fill:hover {
     .card__expander {
         width: calc(200% + 30px);
     }
-
 }

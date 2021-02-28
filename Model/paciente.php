@@ -3,7 +3,7 @@
         public static function selectAll(){
             $con = Connection::getConn();
 
-            $sql = "select * from pacientes";
+            $sql = "select * from pacientes order by cod asc";
             $sql = $con->prepare($sql);
             $sql->execute();
 

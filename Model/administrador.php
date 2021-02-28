@@ -6,11 +6,11 @@
             $sql = "select * from administrador order by id desc";
             $sql = $con->prepare($sql);
             $sql->execute();
-
             $result = array();
 
             while($row = $sql->fetchObject('Administrador')){
                 $result[] = $row;
+                
             }
 
             if($result == null){

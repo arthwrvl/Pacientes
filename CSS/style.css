@@ -1183,9 +1183,9 @@ a.fill:hover {
 }
 
 .CadPac,
-.CadFunc,
+.Func,
 .EditPac,
-.EditFunc,
+.Cons,
 .ListPac,
 .EditUser {
   -webkit-box-flex: 2;
@@ -1199,9 +1199,9 @@ a.fill:hover {
 }
 
 .CadPac h2,
-.CadFunc h2,
+.Func h2,
 .EditPac h2,
-.EditFunc h2,
+.Cons h2,
 .ListPac h2,
 .EditUser h2 {
   color: #ecf0f1;
@@ -1212,9 +1212,9 @@ a.fill:hover {
 }
 
 .CadPac .formul,
-.CadFunc .formul,
+.Func .formul,
 .EditPac .formul,
-.EditFunc .formul,
+.Cons .formul,
 .ListPac .formul,
 .EditUser .formul {
   width: auto;
@@ -1230,9 +1230,9 @@ a.fill:hover {
 }
 
 .CadPac .formul h5,
-.CadFunc .formul h5,
+.Func .formul h5,
 .EditPac .formul h5,
-.EditFunc .formul h5,
+.Cons .formul h5,
 .ListPac .formul h5,
 .EditUser .formul h5 {
   margin-left: 22.5rem;
@@ -1241,9 +1241,9 @@ a.fill:hover {
 }
 
 .CadPac .formul h4,
-.CadFunc .formul h4,
+.Func .formul h4,
 .EditPac .formul h4,
-.EditFunc .formul h4,
+.Cons .formul h4,
 .ListPac .formul h4,
 .EditUser .formul h4 {
   margin-left: 1.1rem;
@@ -1253,9 +1253,9 @@ a.fill:hover {
 }
 
 .CadPac .formul label,
-.CadFunc .formul label,
+.Func .formul label,
 .EditPac .formul label,
-.EditFunc .formul label,
+.Cons .formul label,
 .ListPac .formul label,
 .EditUser .formul label {
   padding: 0.5rem 1rem;
@@ -1263,9 +1263,9 @@ a.fill:hover {
 }
 
 .CadPac .formul input[type="date"]::-webkit-calendar-picker-indicator,
-.CadFunc .formul input[type="date"]::-webkit-calendar-picker-indicator,
+.Func .formul input[type="date"]::-webkit-calendar-picker-indicator,
 .EditPac .formul input[type="date"]::-webkit-calendar-picker-indicator,
-.EditFunc .formul input[type="date"]::-webkit-calendar-picker-indicator,
+.Cons .formul input[type="date"]::-webkit-calendar-picker-indicator,
 .ListPac .formul input[type="date"]::-webkit-calendar-picker-indicator,
 .EditUser .formul input[type="date"]::-webkit-calendar-picker-indicator {
   -webkit-filter: invert(98%) sepia(8%) saturate(73%) hue-rotate(147deg) brightness(94%) contrast(102%);
@@ -1274,18 +1274,18 @@ a.fill:hover {
 }
 
 .CadPac .formul input[type="date"],
-.CadFunc .formul input[type="date"],
+.Func .formul input[type="date"],
 .EditPac .formul input[type="date"],
-.EditFunc .formul input[type="date"],
+.Cons .formul input[type="date"],
 .ListPac .formul input[type="date"],
 .EditUser .formul input[type="date"] {
   top: -5px;
 }
 
 .CadPac .formul textarea,
-.CadFunc .formul textarea,
+.Func .formul textarea,
 .EditPac .formul textarea,
-.EditFunc .formul textarea,
+.Cons .formul textarea,
 .ListPac .formul textarea,
 .EditUser .formul textarea {
   color: #ecf0f1;
@@ -1300,12 +1300,12 @@ a.fill:hover {
 }
 
 .CadPac .formul textarea:focus, .CadPac .formul textarea:hover,
-.CadFunc .formul textarea:focus,
-.CadFunc .formul textarea:hover,
+.Func .formul textarea:focus,
+.Func .formul textarea:hover,
 .EditPac .formul textarea:focus,
 .EditPac .formul textarea:hover,
-.EditFunc .formul textarea:focus,
-.EditFunc .formul textarea:hover,
+.Cons .formul textarea:focus,
+.Cons .formul textarea:hover,
 .ListPac .formul textarea:focus,
 .ListPac .formul textarea:hover,
 .EditUser .formul textarea:focus,
@@ -1314,42 +1314,42 @@ a.fill:hover {
 }
 
 .CadPac .formul textarea::-webkit-input-placeholder,
-.CadFunc .formul textarea::-webkit-input-placeholder,
+.Func .formul textarea::-webkit-input-placeholder,
 .EditPac .formul textarea::-webkit-input-placeholder,
-.EditFunc .formul textarea::-webkit-input-placeholder,
+.Cons .formul textarea::-webkit-input-placeholder,
 .ListPac .formul textarea::-webkit-input-placeholder,
 .EditUser .formul textarea::-webkit-input-placeholder {
   color: #ecf0f1;
 }
 
 .CadPac .formul textarea:-ms-input-placeholder,
-.CadFunc .formul textarea:-ms-input-placeholder,
+.Func .formul textarea:-ms-input-placeholder,
 .EditPac .formul textarea:-ms-input-placeholder,
-.EditFunc .formul textarea:-ms-input-placeholder,
+.Cons .formul textarea:-ms-input-placeholder,
 .ListPac .formul textarea:-ms-input-placeholder,
 .EditUser .formul textarea:-ms-input-placeholder {
   color: #ecf0f1;
 }
 
 .CadPac .formul textarea::-ms-input-placeholder,
-.CadFunc .formul textarea::-ms-input-placeholder,
+.Func .formul textarea::-ms-input-placeholder,
 .EditPac .formul textarea::-ms-input-placeholder,
-.EditFunc .formul textarea::-ms-input-placeholder,
+.Cons .formul textarea::-ms-input-placeholder,
 .ListPac .formul textarea::-ms-input-placeholder,
 .EditUser .formul textarea::-ms-input-placeholder {
   color: #ecf0f1;
 }
 
 .CadPac .formul textarea::placeholder,
-.CadFunc .formul textarea::placeholder,
+.Func .formul textarea::placeholder,
 .EditPac .formul textarea::placeholder,
-.EditFunc .formul textarea::placeholder,
+.Cons .formul textarea::placeholder,
 .ListPac .formul textarea::placeholder,
 .EditUser .formul textarea::placeholder {
   color: #ecf0f1;
 }
 
-.CadPac button {
+.CadPac .cading button {
   float: right;
   border-radius: 1rem;
   width: 4rem;
@@ -1359,24 +1359,87 @@ a.fill:hover {
   color: #ecf0f1;
 }
 
-.CadPac button img {
+.CadPac .cading button img {
   opacity: 0.5;
   width: 3rem;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-.CadPac button img:hover {
+.CadPac .cading button img:hover {
   opacity: 1;
   -webkit-transform: translateX(20px);
           transform: translateX(20px);
 }
 
-.CadFunc button {
-  margin-left: 11rem;
-  margin-top: 19.4rem;
+.CadPac .buttons {
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 36rem;
+}
+
+.CadPac .buttons #cad1 {
+  border-radius: 1rem 0 0 1rem;
+  text-align: right;
+  font-weight: 700;
+  background-color: #11111170;
+}
+
+.CadPac .buttons #edit1 {
+  border-radius: 0;
+  text-align: center;
+}
+
+.CadPac .buttons #view1 {
+  border-radius: 0rem 1rem 1rem 0rem;
+  text-align: left;
+}
+
+.CadPac .buttons button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0;
+  padding: 0.5rem;
+  background-color: #ecf0f11a;
+  color: #ecf0f1;
+  opacity: 0.8;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.CadPac .buttons button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  background-color: #11111170;
+}
+
+.CadPac .EditPac .subbt button img {
+  width: 1.7rem;
+  margin-top: 1rem;
+  margin-left: 15rem;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  opacity: 0.2;
+}
+
+.CadPac .EditPac .subbt button img:hover {
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+  cursor: pointer;
+  opacity: 1;
+}
+
+.Func .cadFb button {
+  margin-left: 43%;
+  margin-top: 145%;
   width: 13.4rem;
-  height: 2.5rem;
+  padding: 0.5rem;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   color: #ecf0f1;
@@ -1387,10 +1450,137 @@ a.fill:hover {
   transition: all 0.2s ease-in-out;
 }
 
-.CadFunc button:hover {
+.Func .cadFb button:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
   background: rgba(255, 255, 255, 0.3);
+}
+
+.Func .EditFunc {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Func .EditFunc h2 {
+  color: #ecf0f1;
+  opacity: 0.8;
+  font-size: 24px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.Func .buttons {
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 24rem;
+}
+
+.Func .buttons #cad2 {
+  border-radius: 1rem 0 0 1rem;
+  text-align: right;
+  font-weight: 700;
+  background-color: #11111170;
+}
+
+.Func .buttons #edit2 {
+  border-radius: 0rem 1rem 1rem 0rem;
+  text-align: left;
+}
+
+.Func .buttons button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0;
+  padding: 0.5rem;
+  background-color: #ecf0f11a;
+  color: #ecf0f1;
+  opacity: 0.8;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.Func .buttons button:hover {
+  background-color: #11111170;
+}
+
+.Func .subbt button img {
+  width: 1.7rem;
+  margin-top: 1rem;
+  margin-left: 15rem;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  opacity: 0.2;
+}
+
+.Func .subbt button img:hover {
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+  cursor: pointer;
+  opacity: 1;
+}
+
+.Cons input[type="date"]::-webkit-calendar-picker-indicator {
+  -webkit-filter: invert(98%) sepia(8%) saturate(73%) hue-rotate(147deg) brightness(94%) contrast(102%);
+          filter: invert(98%) sepia(8%) saturate(73%) hue-rotate(147deg) brightness(94%) contrast(102%);
+  opacity: 0.8;
+}
+
+.Cons input[type="time"]::-webkit-calendar-picker-indicator {
+  -webkit-filter: invert(98%) sepia(8%) saturate(73%) hue-rotate(147deg) brightness(94%) contrast(102%);
+          filter: invert(98%) sepia(8%) saturate(73%) hue-rotate(147deg) brightness(94%) contrast(102%);
+  opacity: 0.8;
+}
+
+.Cons .buttons {
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 24rem;
+}
+
+.Cons .buttons #marc1 {
+  border-radius: 1rem 0 0 1rem;
+  text-align: right;
+  font-weight: 700;
+  background-color: #11111170;
+}
+
+.Cons .buttons #real1 {
+  border-radius: 0rem 1rem 1rem 0rem;
+  text-align: left;
+  background-color: #ecf0f11a;
+}
+
+.Cons .buttons button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0;
+  padding: 0.5rem;
+  background-color: #ecf0f11a;
+  color: #ecf0f1;
+  opacity: 0.8;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.Cons .buttons button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  background-color: #11111170;
 }
 
 .confirm {
@@ -1400,26 +1590,7 @@ a.fill:hover {
   margin-top: 27rem;
 }
 
-.EditPac button img,
-.EditFunc button img {
-  width: 1.7rem;
-  margin-top: 1rem;
-  margin-left: 15rem;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  opacity: 0.2;
-}
-
-.EditPac button img:hover,
-.EditFunc button img:hover {
-  -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
-  cursor: pointer;
-  opacity: 1;
-}
-
-.EditPac .cards,
-.EditFunc .cards {
+.cards {
   padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1480,7 +1651,7 @@ a.fill:hover {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   overflow-y: auto;
-  height: 78vh;
+  height: 70vh;
 }
 
 .card {
