@@ -412,7 +412,7 @@
                     <button onclick="real();" id="real1">Ver Consultas</button>
                 </div>
                 <div class="marcar" id="marc">
-                    <form method="POST" action="http://localhost/Pacientes/dashboard/cadpac">
+                    <form method="POST" action="http://localhost/Pacientes/dashboard/addConsulta">
                         <div class="wrap-input50 nm">
                             <input class="input50" type="text" name="pac">
                             <span class="focus-input50" data-placeholder="Nome do Paciente"></span>
@@ -434,6 +434,30 @@
                 <div class="view" id="vis">
                     <!--faz a tabelinha ai na humilda-->
                     <!--mostrando TODAS as consultas tlgd-->
+                    <table border="1"> 
+                        <tr>
+                            <td>ID</td>
+                            <td>Paciente</td>
+                            <td>Medico</td>
+                            <td>IDPaciente</td>
+                            <td>IDMedico</td>
+                            <td>Data</td>
+                            <td>Horario de Chegada</td>
+                        </tr>
+                        {% for consulta in cons %}
+                        <tr>
+                            <td>{{consulta.id_consulta  }}</td>  
+                            <td>{{consulta.nomePaciente}}</td>  
+                            <td>{{consulta.nomeMedico}}</td>
+                            <td>{{consulta.codPac_FK }}</td>
+                            <td>{{consulta.codAdmin_FK }}</td>  
+                            <td>{{consulta.data }}</td>
+                            
+                            <td>{{consulta.horarioChegada  }}</td>                   
+                        </tr>
+                        
+                        {% endfor %}
+                    </table>
                 </div>
                 <div class="realize" id="rea">
                     <!--faz a tabelinha ai na humilda-->

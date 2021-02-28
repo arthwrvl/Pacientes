@@ -5,6 +5,7 @@
             //echo file_get_contents('.//View/home.html');;
             //try{
                 $colectPac = Pacientes::selectAll();
+                $consulta = Consulta::selectAll();
 
                 $loader = new \Twig\Loader\FilesystemLoader('View');
                 $twig = new \Twig\Environment($loader);
@@ -16,6 +17,7 @@
                 $parametros['name'] = $_SESSION['usr']['name_user'] ?? null; 
                 $parametros['function'] = $_SESSION['usr']['func_user'] ?? null;
                 $parametros['pacs'] = $colectPac;
+                $parametros['cons'] = $consulta;
                 $parametros['location'] = $_SESSION['location'] ?? null;
                 $parametros['lispac'] = unserialize($_SESSION['paclist'] ?? null);
                 $parametros['lisfunc'] = unserialize($_SESSION['funclist'] ?? null);
@@ -107,6 +109,24 @@
         public function updfunc(){
             try{
                 Administrador::update($_POST);
+                echo '<script>location.href="/pacientes/dashboard"</script>';
+            }catch (Exception $e){
+                echo '<script>alert("'.$e->getMessage().'");</script>';
+                echo '<script>location.href="/pacientes/dashboard"</script>';
+            }
+        }
+        public function addConsulta(){
+            try{
+                Consulta::inserirConsulta($POST);
+                echo '<script>location.href="/pacientes/dashboard"</script>';
+            }catch (Exception $e){
+                echo '<script>alert("'.$e->getMessage().'");</script>';
+                echo '<script>location.href="/pacientes/dashboard"</script>';
+            }
+        }
+        public function ordemDeChegada(){
+            try{
+                Consulta::ordem($POST);
                 echo '<script>location.href="/pacientes/dashboard"</script>';
             }catch (Exception $e){
                 echo '<script>alert("'.$e->getMessage().'");</script>';

@@ -23,6 +23,40 @@
                 throw new Exception("não há pacientes cadastrados");
             }*/
         }
+        public static function sintomaRepeticao(){
+            $con = Connection::getConn();
+
+            $sql = "select * from pacientes";
+            $sql = $con->prepare($sql);
+            $sql->execute();
+
+            $result = array();
+            //$res = $sql->fetch();
+            $sintomas = array();
+            
+            while($row = $sql->fetchObject('Pacientes')){
+                $row->sintomas = explode(';', $row->sintomas);
+                foreach( $row->sintomas as $sintoma){
+                    $sintomas = $sintoma;
+                }
+            }
+            $sintomasMaior = $sintomas[0];
+            $contador = 0;
+            $contadorAux = 0;
+            foreach($sintomas as $sintAux){
+                foreach( $sintomas as $sint){
+                    if($sintAux == $sint){
+                        $contadorAux=$contadorAux+1;
+                    }           
+                }
+                if($contadorAux>=$contador){
+                    $contador=$contadorAux;
+                    $sintomasMaior=$sintAux;
+                }
+                $contadorAux=0;
+            }
+            return $sintomasMaior;
+        }
         public static function selectKey($key){
             $con = Connection::getConn();
             $sql = "select * from pacientes where nome like :nam";

@@ -12,6 +12,8 @@ require_once 'Controller/Error401Controller.php';
 require_once 'Database/Connection.php';
 require_once 'Model/Administrador.php';
 require_once 'Model/Paciente.php';
+require_once 'Model/Consulta.php';
+require_once 'Model/Salas.php';
 require_once 'vendor/autoload.php';
 
 
