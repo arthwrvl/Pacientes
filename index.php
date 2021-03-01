@@ -15,6 +15,7 @@ require_once 'Model/Paciente.php';
 require_once 'Model/Consulta.php';
 require_once 'Model/Salas.php';
 require_once 'vendor/autoload.php';
+//require_once 'indexx.php';
 
 
 $template = file_get_contents('View/index.html');
