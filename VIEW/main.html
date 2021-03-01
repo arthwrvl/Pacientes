@@ -429,11 +429,17 @@
                             <input class="input50dta" type="time" name="hr">
                             <span class="focus-input50dta" data-placeholder="Hora da consulta"></span>
                         </div>
+                        <div class="cadbt">
+                            <button type="submit">Cadastrar</button>
+                        </div>
                     </form>
                 </div>
-                <div class="view" id="vis">
+                <div class="view" id="rea">
                     <!--faz a tabelinha ai na humilda-->
                     <!--mostrando TODAS as consultas tlgd-->
+                    {% if lispac == false %}
+                    <h2>não há consultas para exibir</h2>
+                    {% else %}
                     <table border="1"> 
                         <tr>
                             <td>ID</td>
@@ -458,15 +464,30 @@
                         
                         {% endfor %}
                     </table>
+                    {% endif %}
                 </div>
-                <div class="realize" id="rea">
+                <div class="realize" id="view">
                     <!--faz a tabelinha ai na humilda-->
                     <!--mostrando só as do dia por ordem de chegada-->
                     <!--e tu pode selecionar uma e realizar-->
                 </div>
 
             </div>
-            <div class="relat" id="op4">
+            <div class="Relatorio" id="op4">
+                <h2>Relatórios</h2>
+
+                <a href="#">Gerar Relátório do mês atual</a>
+
+                <form method="POST" action="http://localhost/Pacientes/dashboard/addConsulta">
+                <div class="wrap-input50 nm">
+                    <input class="input50" type="number" min="1" max="12" name="pac">
+                    <span class="focus-input50" data-placeholder="Mês do relatório"></span>
+                </div>
+                <div class="cadbt">
+                    <button type="submit"><img src="./Resources/generate.svg"></button>
+                </div>
+            </form>
+
             </div>
         </section>
 

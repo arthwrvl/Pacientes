@@ -13,9 +13,9 @@
                 $result[] = $row;
             }
 
-            if($result == null){
-                throw new Exception("não há funcionarios cadastrados");
-            }
+            /*if($result == null){
+                throw new Exception("não há consultas marcadas");
+            }*/
 
             return $result;
         }
