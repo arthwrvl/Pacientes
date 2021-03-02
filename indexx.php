@@ -45,17 +45,19 @@ $mpdf = new \Mpdf\Mpdf([
     /*$mpdf->WriteHTML('<td></td>');
     $mpdf->WriteHTML('<td>ID PACIENTE/td>');*/
     $con = Connection::getConn();
-    $sql = "select * from consulta where select extract(month from data) = :mes";
+    $sql = "select * from consulta where extract(month from data) = :mes";
     $sql = $con->prepare($sql);
     $sql->bindValue(':mes', $_POST['mont']);
     $sql->execute();
 
     while($row = $sql->fetchObject('Consulta')){
+        $mpdf->WriteHTML('<tr>');
         $mpdf->WriteHTML('<td>' .$row->id_consulta. '</td>');
         $mpdf->WriteHTML('<td>' .$row->nomeMedico. '</td>');
         $mpdf->WriteHTML('<td>' .$row->nomePaciente. '</td>');
         $mpdf->WriteHTML('<td>' .$row->data. '</td>');
         $mpdf->WriteHTML('<td>' .$row->horarioChegada. '</td>');
+        $mpdf->WriteHTML('</tr>');
     }
 
     $mpdf->WriteHTML('</tr>');

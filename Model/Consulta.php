@@ -42,9 +42,10 @@
 
         public static function inserirConsulta($dados){
             $con = Connection::getConn();
-
+            //var_dump($dados['pac']);
             $codPac = Consulta::resgatarCodigoPac($dados['pac']);
             $codMed = Consulta::resgatarCodigoMed($dados['med']);
+            //var_dump($codPac);
     
             $sql = "insert into consulta(codPac_FK, codAdmin_FK, data, nomePaciente, nomeMedico) 
                         values (:codPac, :codAdmin, :data, :nomPac, :nomMed)";
@@ -74,15 +75,15 @@
             $sql = "select cod from pacientes where nome = :nome";
 
             $sql = $con->prepare($sql);
-            $sql->bindValue(':nome', $nome);
+            $sql->bindValue(':nome', $pac);
             $sql->execute();
-
+            $cod = 0;
             if($sql->rowCount()==1){
 
                 $res = $sql->fetch();
                 $cod = $res['cod'];
             }
-
+            //var_dump($cod);
             return $cod;
                
         }
