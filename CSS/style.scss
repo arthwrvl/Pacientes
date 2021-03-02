@@ -1784,3 +1784,52 @@ a.fill:hover {
         width: calc(200% + 30px);
     }
 }
+
+@media print {
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h3 {
+        color: #2f3640;
+        float: right;
+    }
+
+    h4 {
+        color: #2f3640;
+    }
+
+    h2 {
+        color: #2f3640;
+    }
+
+    table {
+        color: #2f3640;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    img {
+        width: 4rem;
+    }
+
+    td,
+    th {
+        border: 1px solid #2f3640;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+}
