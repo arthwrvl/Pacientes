@@ -113,21 +113,32 @@
         }
 
         public static function insert($dados){
+            $arquiivo = $_FILES["arquivo"]["tmp_name"]; 
+            $tamanho = $_FILES["arquivo"]["size"];
+            $tipo    = $_FILES["arquivo"]["type"];
+            $nome  = $_FILES["arquivo"]["name"];
+
             if (empty($dados['user']) || empty($dados['Sobrenome']) || 
             empty($dados['cpf']) || empty($dados['dtnasc']) || empty($dados['rua']) || empty($dados['bairro']) || 
             empty($dados['num']) || empty($dados['gen']) || empty($dados['city']) || empty($dados['est']) || 
-            empty($dados['sintomas']) || empty($dados['acom']) || empty($dados['dti']) || empty($dados['gravid'])){
+            empty($dados['sintomas']) || empty($dados['dti']) || empty($dados['gravid'])){
                 throw new Exception("Preencha todos os campos");
 
                 return false;
             }
 
+            
             $con = Connection::getConn();
 
-            $sql = "insert into pacientes (acompanhante, cpf, data_nasc, data_sintomas, endereco, genero, gravidade,
-             nome, sintomas ) values (:acomp, :cpf, :data_nasc, :data_sint, :end, :gen, :grav, :nome, :sint)";
+            $fp = fopen($arquiivo, "rb");
+            $conteudo = fread($fp, $tamanho);
+            $conteudo = addslashes($conteudo);
+            fclose($fp); 
+
+            $sql = "insert into pacientes (cpf, data_nasc, data_sintomas, endereco, genero, gravidade,
+             nome, sintomas, arquivo ) values (:cpf, :data_nasc, :data_sint, :end, :gen, :grav, :nome, :sint, :arq)";
             $sql = $con->prepare($sql);
-            $sql->bindValue(':acomp', $dados['acom']);
+            //$sql->bindValue(':acomp', $dados['acom']);
             $sql->bindValue(':cpf', $dados['cpf']);
             $sql->bindValue(':data_nasc', $dados['dtnasc']);
             $sql->bindValue(':data_sint', $dados['dti']);
@@ -136,6 +147,7 @@
             $sql->bindValue(':grav', $dados['gravid']);
             $sql->bindValue(':nome', $dados['user']." ".$dados['Sobrenome']);
             $sql->bindValue(':sint', $dados['sintomas']);
+            $sql->bindValue(':arq', $conteudo);
             $res = $sql->execute();
 
             if($res == 0){

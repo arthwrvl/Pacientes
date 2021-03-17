@@ -58,7 +58,7 @@
                     <button onclick="viewP();" id="view1">Visualizar Pacientes</button>
                 </div>
                 <div class="formul" id="cadp1">
-                    <form method="POST" action="http://localhost/Pacientes/dashboard/cadpac">
+                    <form method="POST" enctype="multipart/form-data" action="http://localhost/Pacientes/dashboard/cadpac">
                         <div class="wrap-input50 nm">
                             <input class="input50" type="text" name="user">
                             <span class="focus-input50" data-placeholder="Nome"></span>
@@ -108,6 +108,10 @@
                             <input class="input50" type="text" name="acom">
                             <span class="focus-input50" data-placeholder="Acompanhante"></span>
                         </div>
+                        <div class="wrap-input50 ac">
+                            Selecione uma imagem: <input class="input50" type="file" name="arquivo">
+                            <br />                        
+                        </div>
                         <div class="wrap-input50dta dti">
                             <input class="input50dta" type="date" name="dti">
                             <span class="focus-input50dta" data-placeholder="Data inicial dos sintomas"></span>
@@ -119,6 +123,7 @@
                                 <button><img src="./Resources/send.svg" class="btn"></button>
                             </div>
                         </div>
+                        
                     </form>
                 </div>
                 <div class="EditPac" id="editp1">
@@ -437,7 +442,7 @@
                 <div class="view" id="rea">
                     <!--faz a tabelinha ai na humilda-->
                     <!--mostrando TODAS as consultas tlgd-->
-                    {% if lispac == false %}
+                    {% if cons == false %}
                     <h2>não há consultas para exibir</h2>
                     {% else %}
                     <table border="1"> 
