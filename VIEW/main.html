@@ -42,7 +42,7 @@
                             <h2>Relatórios</h2>
                         </div>
                     </a>
-                    
+
 
                 </div>
             </div>
@@ -58,7 +58,8 @@
                     <button onclick="viewP();" id="view1">Visualizar Pacientes</button>
                 </div>
                 <div class="formul" id="cadp1">
-                    <form method="POST" enctype="multipart/form-data" action="http://localhost/Pacientes/dashboard/cadpac">
+                    <form method="POST" enctype="multipart/form-data"
+                        action="http://localhost/Pacientes/dashboard/cadpac">
                         <div class="wrap-input50 nm">
                             <input class="input50" type="text" name="user">
                             <span class="focus-input50" data-placeholder="Nome"></span>
@@ -108,13 +109,14 @@
                             <input class="input50" type="text" name="acom">
                             <span class="focus-input50" data-placeholder="Acompanhante"></span>
                         </div>
-                        <div class="wrap-input50 ac">
-                            Selecione uma imagem: <input class="input50" type="file" name="arquivo">
-                            <br />                        
-                        </div>
                         <div class="wrap-input50dta dti">
                             <input class="input50dta" type="date" name="dti">
                             <span class="focus-input50dta" data-placeholder="Data inicial dos sintomas"></span>
+                        </div>
+                        <div class="img">
+                            <input type="file" name="arquivo" id="arquivo">
+                            <label for="arquivo" id="lab"><img src="./Resources/upload.svg"><span>Selecione um
+                                    arquivo</span></label>
                         </div>
                         <div class="confirm">
                             <textarea id="sint" name="sintomas"
@@ -123,7 +125,7 @@
                                 <button><img src="./Resources/send.svg" class="btn"></button>
                             </div>
                         </div>
-                        
+
                     </form>
                 </div>
                 <div class="EditPac" id="editp1">
@@ -269,7 +271,7 @@
                         {% endfor %}
                         {% endif %}
                     </div>
-    
+
                 </div>
             </div>
             <div class="Func" id="op2">
@@ -415,6 +417,7 @@
                 <div class="buttons">
                     <button onclick="marc();" id="marc1">Marcar Consulta</button>
                     <button onclick="real();" id="real1">Ver Consultas</button>
+                    <button onclick="upd();" id="upd1">Atualizar Consulta</button>
                 </div>
                 <div class="marcar" id="marc">
                     <form method="POST" action="http://localhost/Pacientes/dashboard/addConsulta">
@@ -440,12 +443,14 @@
                     </form>
                 </div>
                 <div class="view" id="rea">
+
+
                     <!--faz a tabelinha ai na humilda-->
                     <!--mostrando TODAS as consultas tlgd-->
                     {% if cons == false %}
                     <h2>não há consultas para exibir</h2>
                     {% else %}
-                    <table border="1"> 
+                    <table border="1">
                         <tr>
                             <td>ID</td>
                             <td>Paciente</td>
@@ -457,26 +462,46 @@
                         </tr>
                         {% for consulta in cons %}
                         <tr>
-                            <td>{{consulta.id_consulta  }}</td>  
-                            <td>{{consulta.nomePaciente}}</td>  
+                            <td>{{consulta.id_consulta }}</td>
+                            <td>{{consulta.nomePaciente}}</td>
                             <td>{{consulta.nomeMedico}}</td>
                             <td>{{consulta.codPac_FK }}</td>
-                            <td>{{consulta.codAdmin_FK }}</td>  
+                            <td>{{consulta.codAdmin_FK }}</td>
                             <td>{{consulta.data }}</td>
-                            
-                            <td>{{consulta.horarioChegada  }}</td>                   
+                            <td>{{consulta.horarioChegada }}</td>
                         </tr>
-                        
                         {% endfor %}
                     </table>
                     {% endif %}
                 </div>
-                <div class="realize" id="view">
-                    <!--faz a tabelinha ai na humilda-->
-                    <!--mostrando só as do dia por ordem de chegada-->
-                    <!--e tu pode selecionar uma e realizar-->
+                <div class="upd" id="up">
+                    <form method="POST" action="http://localhost/Pacientes/dashboard/addConsulta">
+                        <div class="wrap-input50 nm">
+                            <input id="paci" class="input50" type="text" name="pac">
+                            <span class="focus-input50" data-placeholder="Nome do Paciente"></span>
+                        </div>
+                        <div class="wrap-input50 sr">
+                            <input id="medi" class="input50" type="text" name="med">
+                            <span class="focus-input50" data-placeholder="Nome do Médico"></span>
+                        </div>
+                        <div class="wrap-input50dta cpf">
+                            <input id="dataa" class="input50dta" type="date" name="dat">
+                            <span class="focus-input50dta" data-placeholder="Data da consulta"></span>
+                        </div>
+                        <div class="wrap-input50dta dt">
+                            <input id="horaa" class="input50dta" type="time" name="hr">
+                            <span class="focus-input50dta" data-placeholder="Hora da consulta"></span>
+                        </div>
+                        <input type="hidden" id="cod">
+                        <div class="pdf">
+                            <input type="file" name="arquivo" id="arquivo">
+                            <label for="arquivo" id="lab"><img src="./Resources/upload.svg"><span>Selecione um
+                                    arquivo</span></label>
+                        </div>
+                        <div class="cadbt">
+                            <button type="submit">Cadastrar</button>
+                        </div>
                 </div>
-
             </div>
             <div class="Relatorio" id="op4">
                 <h2>Relatórios</h2>
@@ -484,14 +509,14 @@
                 <a href="#">Gerar Relátório do mês atual</a>
 
                 <form method="POST" action="indexx.php">
-                <div class="wrap-input50 nm">
-                    <input class="input50" type="number" min="1" max="12" name="mont">
-                    <span class="focus-input50" data-placeholder="Mês do relatório"></span>
-                </div>
-                <div class="cadbt">
-                    <button type="submit"><img src="./Resources/generate.svg"></button>
-                </div>
-            </form>
+                    <div class="wrap-input50 nm">
+                        <input class="input50" type="number" min="1" max="12" name="mont">
+                        <span class="focus-input50" data-placeholder="Mês do relatório"></span>
+                    </div>
+                    <div class="cadbt">
+                        <button type="submit"><img src="./Resources/generate.svg"></button>
+                    </div>
+                </form>
 
             </div>
         </section>
@@ -502,6 +527,8 @@
 
 </body>
 <script src="./JS/menu.js"></script>
+<script src="./JS/upload.js"></script>
+
 {% if location == 2 %}
 <script>Option1();</script>
 <script>editP();</script>

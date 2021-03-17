@@ -323,6 +323,72 @@ iframe {
   top: 73%;
 }
 
+.img {
+  width: 20%;
+  position: absolute;
+  margin-bottom: 37px;
+  left: 65%;
+  top: 73%;
+}
+
+.img input[type="file"] {
+  display: none;
+}
+
+.img label {
+  padding: 20px 10px;
+  width: 100%;
+  background-color: #ecf0f11a;
+  color: #ecf0f1c5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.img label img {
+  width: 1.7rem;
+  margin-right: 0.4rem;
+}
+
+.pdf {
+  width: 20%;
+  position: absolute;
+  margin-bottom: 37px;
+  left: 35%;
+  top: 33%;
+}
+
+.pdf input[type="file"] {
+  display: none;
+}
+
+.pdf label {
+  padding: 8px 10px;
+  width: 100%;
+  background-color: #ecf0f11a;
+  color: #ecf0f1c5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.pdf label img {
+  width: 1.7rem;
+  margin-right: 0.4rem;
+}
+
 .input100 {
   font-size: 15px;
   color: #ecf0f1c5;
@@ -1561,12 +1627,16 @@ a.fill:hover {
   display: none;
 }
 
+.Cons #up {
+  display: none;
+}
+
 .Cons .buttons {
   margin: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 24rem;
+  width: 36rem;
 }
 
 .Cons .buttons #marc1 {
@@ -1577,6 +1647,12 @@ a.fill:hover {
 }
 
 .Cons .buttons #real1 {
+  border-radius: 0;
+  text-align: center;
+  background-color: #ecf0f11a;
+}
+
+.Cons .buttons #upd1 {
   border-radius: 0rem 1rem 1rem 0rem;
   text-align: left;
   background-color: #ecf0f11a;
@@ -1606,9 +1682,9 @@ a.fill:hover {
 
 .Cons .cadbt button {
   margin-left: 156%;
-  margin-top: 55%;
+  margin-top: 63%;
   width: 13.4rem;
-  padding: 0.5rem;
+  padding: 10px;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   color: #ecf0f1;

@@ -12,7 +12,7 @@ const dvcadf2 = document.querySelector("#cadF2");
 const dveditf2 = document.querySelector("#editF2");
 
 const dvmarcc1 = document.querySelector("#marc");
-const dvviewc1 = document.querySelector("#vis");
+const dvupdc1 = document.querySelector("#up");
 const dvrealc1 = document.querySelector("#rea");
 
 
@@ -24,7 +24,7 @@ const btcadf2 = document.querySelector("#cad2");
 const bteditf2 = document.querySelector("#edit2");
 
 const btmarc1 = document.querySelector("#marc1");
-//const btview1 = document.querySelector("#vieww1");
+const btupd = document.querySelector("#upd1");
 const btreal1 = document.querySelector("#real1");
 
 const btn1 = document.querySelector("#btn1");
@@ -209,25 +209,25 @@ function marc() {
     if (dvmarcc1.style.display != "flex") {
         dvmarcc1.style.display = "flex";
         dvrealc1.style.display = "none";
-        //dvviewc1.style.display = "none";
+        dvupdc1.style.display = "none";
         btmarc1.style.background = "#11111170";
-        // btview1.style.background = "#ecf0f11a";
+        btupd.style.background = "#ecf0f11a";
         btreal1.style.background = "#ecf0f11a";
         btmarc1.style.fontWeight = "700";
-        //btview1.style.fontWeight = "300";
+        btupd.style.fontWeight = "300";
         btreal1.style.fontWeight = "300";
     }
 }
 
-function view() {
-    if (dvviewc1.style.display != "flex") {
-        dvviewc1.style.display = "flex";
+function upd() {
+    if (dvupdc1.style.display != "flex") {
+        dvupdc1.style.display = "flex";
         dvmarcc1.style.display = "none";
         dvrealc1.style.display = "none";
-        btview1.style.background = "#11111170";
+        btupd.style.background = "#11111170";
         btreal1.style.background = "#ecf0f11a";
         btmarc1.style.background = "#ecf0f11a";
-        btview1.style.fontWeight = "700";
+        btupd.style.fontWeight = "700";
         btreal1.style.fontWeight = "300";
         btmarc1.style.fontWeight = "300";
     }
@@ -236,12 +236,12 @@ function real() {
     if (dvrealc1.style.display != "flex") {
         dvrealc1.style.display = "flex";
         dvmarcc1.style.display = "none";
-        //dvviewc1.style.display = "none";
+        dvupdc1.style.display = "none";
         btreal1.style.background = "#11111170";
-        //btview1.style.background = "#ecf0f11a";
+        btupd.style.background = "#ecf0f11a";
         btmarc1.style.background = "#ecf0f11a";
         btreal1.style.fontWeight = "700";
-        // btview1.style.fontWeight = "300";
+        btupd.style.fontWeight = "300";
         btmarc1.style.fontWeight = "300";
     }
 }

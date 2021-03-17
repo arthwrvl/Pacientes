@@ -315,6 +315,67 @@ iframe {
     top: 73%;
 }
 
+.img {
+    width: 20%;
+    position: absolute;
+    margin-bottom: 37px;
+    left: 65%;
+    top: 73%;
+
+    input[type="file"] {
+        display: none;
+    }
+
+    label {
+        padding: 20px 10px;
+        width: 100%;
+        background-color: $bg_colorTransp;
+        color: $T_colorTransp;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 1rem;
+
+        img {
+            width: 1.7rem;
+            margin-right: 0.4rem;
+        }
+    }
+}
+
+.pdf {
+    width: 20%;
+    position: absolute;
+    margin-bottom: 37px;
+    left: 35%;
+    top: 33%;
+
+    input[type="file"] {
+        display: none;
+    }
+
+    label {
+        padding: 8px 10px;
+        width: 100%;
+        background-color: $bg_colorTransp;
+        color: $T_colorTransp;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 1rem;
+
+        img {
+            width: 1.7rem;
+            margin-right: 0.4rem;
+        }
+    }
+}
+
+
+
+
 .input100 {
     font-size: 15px;
     color: $T_colorTransp;
@@ -1345,10 +1406,14 @@ a.fill:hover {
         display: none;
     }
 
+    #up {
+        display: none;
+    }
+
     .buttons {
         margin: 1rem;
         display: flex;
-        width: 24rem;
+        width: 36rem;
 
         #marc1 {
             border-radius: 1rem 0 0 1rem;
@@ -1358,6 +1423,12 @@ a.fill:hover {
         }
 
         #real1 {
+            border-radius: 0;
+            text-align: center;
+            background-color: $bg_colorTransp;
+        }
+
+        #upd1 {
             border-radius: 0rem 1rem 1rem 0rem;
             text-align: left;
             background-color: $bg_colorTransp;
@@ -1385,9 +1456,9 @@ a.fill:hover {
     .cadbt {
         button {
             margin-left: 156%;
-            margin-top: 55%;
+            margin-top: 63%;
             width: 13.4rem;
-            padding: 0.5rem;
+            padding: 10px;
             background: rgba(0, 0, 0, 0.2);
             border-radius: 1rem;
             color: $T_color;
