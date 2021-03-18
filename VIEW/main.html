@@ -475,7 +475,7 @@
                     {% endif %}
                 </div>
                 <div class="upd" id="up">
-                    <form method="POST" action="http://localhost/Pacientes/dashboard/addConsulta">
+                    <form method="POST" enctype="multipart/form-data" action="http://localhost/Pacientes/dashboard/attConsulta">
                         <div class="wrap-input50 nm">
                             <input id="paci" class="input50" type="text" name="pac">
                             <span class="focus-input50" data-placeholder="Nome do Paciente"></span>
@@ -494,8 +494,8 @@
                         </div>
                         <input type="hidden" id="cod">
                         <div class="pdf">
-                            <input type="file" name="arquivo" id="arquivo">
-                            <label for="arquivo" id="lab"><img src="./Resources/upload.svg"><span>Selecione um
+                            <input type="file" name="arq2" id="arq2">
+                            <label for="arq2" id="lab"><img src="./Resources/upload.svg"><span>Selecione um
                                     arquivo</span></label>
                         </div>
                         <div class="cadbt">

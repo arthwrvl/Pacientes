@@ -46,6 +46,8 @@
             $codPac = Consulta::resgatarCodigoPac($dados['pac']);
             $codMed = Consulta::resgatarCodigoMed($dados['med']);
             //var_dump($codPac);
+            echo $codPac;
+            echo $codMed;
     
             $sql = "insert into consulta(codPac_FK, codAdmin_FK, data, nomePaciente, nomeMedico) 
                         values (:codPac, :codAdmin, :data, :nomPac, :nomMed)";
@@ -83,7 +85,7 @@
                 $res = $sql->fetch();
                 $cod = $res['cod'];
             }
-            //var_dump($cod);
+            var_dump($cod);
             return $cod;
                
         }
@@ -95,13 +97,13 @@
             $sql = $con->prepare($sql);
             $sql->bindValue(':nome', $med);
             $sql->execute();
-
+            $cod=0;
             if($sql->rowCount()==1){
 
                 $res = $sql->fetch();
                 $cod = $res['cod'];
             }
-            
+            var_dump($cod);
             return $cod;
                
         }
@@ -125,6 +127,46 @@
             }
 
             return $result;
+        }
+
+        public static function atualizarConsulta($dados){
+
+            $arquiivo = $_FILES["arq2"]["tmp_name"]; 
+            $tamanho = $_FILES["arq2"]["size"];
+            $tipo    = $_FILES["arq2"]["type"];
+            $nome  = $_FILES["arq2"]["name"];
+            
+            $con = Connection::getConn();
+
+            $fp = fopen($arquiivo, "rb");
+            $conteudo = fread($fp, $tamanho);
+            $conteudo = addslashes($conteudo);
+            fclose($fp); 
+            echo $dados['pac'];
+            echo $dados['med'];
+
+            $codPac = Consulta::resgatarCodigoPac($dados['pac']);
+            $codMed = Consulta::resgatarCodigoMed($dados['med']);
+
+            $sql = "update consulta set horarioChegada = :horario, nomePaciente = :nomePaci, nomeMedico = :nomeMedi, data = :dat, arquivo = :arquivo where codPac_FK = :codPac and codAdmin_FK = :codAdmin";
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':dat', $dados['dat']);
+            $sql->bindValue(':arquivo', $conteudo);
+            $sql->bindValue(':codPac', $codPac);
+            $sql->bindValue(':codAdmin', $codMed);
+            $sql->bindValue(':nomePaci', $dados['pac']);
+            $sql->bindValue(':nomeMedi', $dados['med']);
+            $sql->bindValue(':horario', $dados['hr']);
+            $res = $sql->execute();
+
+            if($res == 0){
+                throw new Exception("falha ao atualizar consulta");
+
+                return false;
+            }
+
+            return true;
+
         }
     }
 

@@ -133,4 +133,13 @@
                 echo '<script>location.href="/pacientes/dashboard"</script>';
             }
         }
+        public function attConsulta(){
+            try{
+                Consulta::atualizarConsulta($_POST);
+                echo '<script>location.href="/pacientes/dashboard"</script>';
+            }catch (Exception $e){
+                echo '<script>alert("'.$e->getMessage().'");</script>';
+                echo '<script>location.href="/pacientes/dashboard"</script>';
+            }
+        }
     }
