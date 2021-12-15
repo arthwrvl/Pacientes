@@ -1,2 +1,2 @@
 # Pacientes
-projeto do pastel 
+projeto de site para gerenciar pacientes em um hospital
